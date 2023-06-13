@@ -1,6 +1,6 @@
 <?php 
-define("RACINE_WWW", dirname(__FILE__)."/../www/");
-define("RACINE_CRON", dirname(__FILE__)."/../cron/");
-define("RACINE_ERROR", dirname(__FILE__)."/../error/");
-define("RACINE_INSTALL", dirname(__FILE__)."/../install/");
+define("RACINE_WWW", __DIR__."/../www/");
+define("RACINE_CRON", __DIR__."/../cron/");
+define("RACINE_ERROR", __DIR__."/../error/");
+define("RACINE_INSTALL", __DIR__."/../install/");
 ?>

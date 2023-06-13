@@ -1,6 +1,6 @@
 <?php 
 include_once 'config_path.php';
-include_once RACINE_WWW.'src/config/config_default.php';
+//include_once RACINE_WWW.'src/config/config_default.php';
 
 $title = "ERROR INCONNU";
 $img = "";
@@ -12,7 +12,7 @@ if(!empty($_GET) && array_key_exists('error', $_GET) && !empty($_GET['error'])) 
 }
 
 
-$ini_array = parse_ini_file(dirname(__FILE__) . '/src/includes/message.ini', true);
+$ini_array = parse_ini_file(__DIR__ . '/src/includes/message.ini', true);
 if(!empty($ini_array) && array_key_exists($key, $ini_array)) {
     $title = $ini_array[$key]['title_erreur'];
     if(!empty($ini_array[$key]['img_erreur'])) {
@@ -21,7 +21,7 @@ if(!empty($ini_array) && array_key_exists($key, $ini_array)) {
     $text = $ini_array[$key]['txt_erreur'];
 }
 
-$html = file_get_contents(dirname(__FILE__) . '/src/templates/error.html', true);
+$html = file_get_contents(__DIR__ . '/src/templates/error.html', true);
 $html = str_replace("[##RACINE##]", RACINE, $html);
 $html = str_replace("[##RACINE_ERROR##]", RACINE_ERROR, $html);
 $html = str_replace("[##TITLE_ERROR##]", $title, $html);
