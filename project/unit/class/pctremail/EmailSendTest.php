@@ -1,45 +1,34 @@
 <?php
+use PHPUnit\Framework\TestCase;
+
+define("RACINE_UNIT", dirname(__FILE__)."/../..");
+require_once(RACINE_UNIT . '/config_path.php');
+require_once(RACINE_UNIT . '/function_test.php');
+require_once(RACINE_WWW . '/src/class/pctremail/EmailSend.php');
+
 /**
- * Pour se connecter a la base de donner a partir du fichier "sgbd_config.php".
- * Pouvoir avoir une connexion a la base de donnees differentes.
- * numero d'error de la classe '36245XXXXXX'
+ * ClassNameTest
+ * @group group
  */
+class EmailSendTest extends TestCase
+{
+    /**
+     * @var Create_folder
+     */
+    protected $object;
 
-// verifier qu'on n'a pas deja creer la fonction
-if (!class_exists('EmailSend')) {
-
-    // fonction pour faire la connexion a la base de donnes
-    class EmailSend {
-
-        private string|null $mail_to;
-        private string|null $name_to;
-        private string|null $mail_from;
-        private string|null $name_from;
-        private string|null $charset;
-        private string|null $objet;
-        private string|null $messageHTML;
-        private string|null $messageText;
-        private array|null $attachments;
-
-        /**
-         * Undocumented function
-         *
-         * @param integer $time timestamp Unix
-         */
-        public function __construct() {
-            $this->mail_to = "";
-            $this->mail_from = "";
-            $this->charset = "UTF-8";
-            $this->objet = "";
-            $this->messageHTML = "";
-            $this->messageText = "";
-            $this->attachments = [];
-        }
+    /**
+     * Sets up the fixture, for example, opens a network connection.
+     * This method is called before a test is executed.
+     */
+    protected function setUp(): void {
+        $this->object = new EmailSend();
+    }
 
         /**
          * Set the value of mail
          */
-        public function setMailTo(string|null $mail_to, string|null $name_to = null): self
+        public function testSetMailTo(string|null $mail_to, string|null $name_to = null): self
         {
             $this->mail_to = !empty($mail_to) ? $mail_to : "";
             $this->name_to = !empty($name_to) ? $name_to : "";
@@ -52,7 +41,7 @@ if (!class_exists('EmailSend')) {
         /**
          * Set the value of mail_from
          */
-        public function setMailFrom(string|null $mail_from, string|null $name_from = null): self
+        public function testSetMailFrom(string|null $mail_from, string|null $name_from = null): self
         {
             $this->mail_from = !empty($mail_from) ? $mail_from : "";
             $this->name_from = !empty($name_from) ? $name_from : "";
@@ -62,66 +51,28 @@ if (!class_exists('EmailSend')) {
             return $this;
         }
 
-        private function encodingsChar(string|null $charset): string|null {
-            foreach (mb_list_encodings() as $value) {
-                if(strtolower($charset) == strtolower($value)) {
-                    return $value;
-                }
-            }
-            return null;
-        }
-
         /**
          * Set the value of charset
          */
-        public function setCharset(string|null $charset): self
+        public function testSetCharset(string|null $charset): self
         {
-            if(!empty($charset)) {
-                if(!empty($encoding = $this->encodingsChar($charset))) {
-                    $this->charset = $encoding;
-                } else {
-                    throw new Exception("Le charset (".$charset.") n'est pas valide.", 36245000009);
-                }
-            } else {
-                $this->charset = "";
-            }
+            $this->charset = !empty($charset) ? $charset : "";
             return $this;
         }
 
         /**
          * Set the value of objet
          */
-        public function setObjet(string|null $objet): self
+        public function testSetObjet(string|null $objet): self
         {
             $this->objet = !empty($objet) ? $objet : "";
             return $this;
         }
 
         /**
-         * 
-         */
-        private function textAndFile(string|null $message): string|null {
-            if (file_exists($message)) {
-                if(($mime = mime_content_type($message))!==false && strtolower($mime) == "text/plain") {
-                    if(($content = file_get_contents($message))!==false) {
-                        return !empty($content) ? $content : "";
-                    } else {
-                        throw new Error("Il n'est pas possible d'ouvrir le fichier (".$message.").", 36245000007);
-                        return "";
-                    }
-                }else {
-                    throw new Error("Le fichier n'est pas valide(".$message.").", 36245000008);
-                    return "";
-                }
-            } else {
-                return !empty($message) ? $message : "";
-            }
-        }
-
-        /**
          * Set the value of messageHTML
          */
-        public function setMessageHTML(string|null $messageHTML): self
+        public function testSetMessageHTML(string|null $messageHTML): self
         {
             $this->messageHTML = $this->textAndFile($messageHTML);
             return $this;
@@ -130,7 +81,7 @@ if (!class_exists('EmailSend')) {
         /**
          * Set the value of messageText
          */
-        public function setMessageText(string|null $messageText): self
+        public function testSetMessageText(string|null $messageText): self
         {
             $this->messageText = $this->textAndFile($messageText);
             return $this;
@@ -139,7 +90,7 @@ if (!class_exists('EmailSend')) {
         /**
          * Set the value of attachment
          */
-        public function addAttachment(string|null $file): self
+        public function testAddAttachment(string|null $file): self
         {
             if(empty($file)) {
                 return $this;
@@ -155,7 +106,7 @@ if (!class_exists('EmailSend')) {
          * Pour envoyer un message html (si le message ne peut pas etre lut en html, il sera affiche en texte).
          * Si le message texte est vide, il sera remplacer par le htlm (sans les balises).
          */
-        public function send():self {
+        public function testSend():self {
             $mail_from_def = "\"" . $this->mail_from . "\" <" . $this->mail_from . ">";
             if(!empty($this->name_from)) {
                 $mail_from_def = "\"" . $this->name_from . "\" <" . $this->mail_from . ">";
@@ -175,13 +126,8 @@ if (!class_exists('EmailSend')) {
             if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $this->mail_to)) { // On filtre les serveurs qui rencontrent des bogues.
                 $passage_ligne = "\r\n";
             }
-            if(empty($this->messageText) && !empty($this->messageHTML)) {
+            if(empty($this->messageText)) {
                 $this->messageText = strip_tags(str_replace("<br />", "\n", $this->messageHTML));
-            } else if(!empty($this->messageText) && empty($this->messageHTML)){
-                $this->messageHTML = str_replace("\n", "<br />\n", strip_tags($this->messageText));
-                $this->messageText = strip_tags($this->messageText);
-            } else if(!empty($this->messageText) && !empty($this->messageHTML)){
-                $this->messageText = strip_tags($this->messageText);
             }
             //Creation de la boundary
             $boundary = "-----=" . md5(rand());
@@ -228,5 +174,4 @@ if (!class_exists('EmailSend')) {
             return $this;
         }
         
-    }
 }
