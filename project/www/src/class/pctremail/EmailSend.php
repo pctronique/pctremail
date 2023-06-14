@@ -80,12 +80,29 @@ if (!class_exists('EmailSend')) {
             return $this;
         }
 
+        private function textAndFile(string|null $message): string|null {
+            if (file_exists($message)) {
+                if(($content = file_get_contents($message))!==false) {
+                    if(filter_var($content)) {
+                        return !empty($content) ? $content : "";
+                    } else {
+                        return !empty($message) ? $message : "";
+                    }
+                } else {
+                    throw new Error("Il n'est pas possible d'ouvrir le fichier (".$file_name.").", 36245000007);
+                    return "";
+                }
+            } else {
+                return !empty($message) ? $message : "";
+            }
+        }
+
         /**
          * Set the value of messageHTML
          */
         public function setMessageHTML(string|null $messageHTML): self
         {
-            $this->messageHTML = !empty($messageHTML) ? $messageHTML : "";
+            $this->messageHTML = $this->textAndFile($messageHTML);
             return $this;
         }
 
@@ -94,7 +111,7 @@ if (!class_exists('EmailSend')) {
          */
         public function setMessageText(string|null $messageText): self
         {
-            $this->messageText = !empty($messageText) ? $messageText : "";
+            $this->messageText = $this->textAndFile($messageText);
             return $this;
         }
 
@@ -176,7 +193,6 @@ if (!class_exists('EmailSend')) {
                     } else {
                         throw new Error("Il n'est pas possible d'ouvrir le fichier (".$file_name.").", 36245000006);
                     }
-                    
                 }
             }
             //Fin du message
