@@ -213,8 +213,8 @@ if (!class_exists('EmailSend')) {
                         fclose($handle);
                     
                         $message .= $passage_ligne .'--'.$boundary.$passage_ligne;
-                        $message .= 'Content-type:'.$file_type.';name='.basename($file_name).$passage_ligne;
-                        $message .= 'Content-transfer-encoding:base64'.$passage_ligne;
+                        $message .= 'Content-Type: '.$file_type.'; name='.basename($file_name).$passage_ligne;
+                        $message .= 'Content-Transfer-Encoding: base64'.$passage_ligne;
                         $message .= $passage_ligne . $content.$passage_ligne;
                     } else {
                         throw new Error("Il n'est pas possible d'ouvrir le fichier (".$file_name.").", 36245000006);
