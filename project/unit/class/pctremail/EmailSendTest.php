@@ -15,7 +15,11 @@ class EmailSendTest extends TestCase
     /**
      * @var Create_folder
      */
-    protected $object;
+    protected EmailSend|null $object;
+    private string|null $folderSave;
+    private string|null $fileValide;
+    private string|null $FileError;
+    private string|null $FileVerif;
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -23,82 +27,226 @@ class EmailSendTest extends TestCase
      */
     protected function setUp(): void {
         $this->object = new EmailSend();
+        $this->folderSave = __DIR__."/../../upload/";
+        if(!is_dir($this->folderSave)) {
+            mkdir($this->folderSave, 0777, true);
+        }
+        $this->fileValide = $this->folderSave."EmailSendValide.txt";
+        $this->FileError = $this->folderSave."EmailSendError.txt";
+        $this->FileVerif = $this->folderSave."EmailSendVerif.txt";
+    }
+
+    private function deleteFile():self {
+        if(is_file($this->fileValide)) {
+            unlink($this->fileValide);
+        }
+        if(is_file($this->FileError)) {
+            unlink($this->FileError);
+        }
+        if(is_file($this->FileVerif)) {
+            unlink($this->FileVerif);
+        }
+        return $this;
+    }
+
+    private function displayValidated(array|null $tabVal, string|null $name = null, bool $verif = false):self {
+        $name = !empty($name) ? $name : "DATA";
+        $tabVal = array_unique($tabVal);
+        $content = "------------------------------"."\n\n";
+        $content .= "-- VALIDATED : ".$name."\n";
+        $content .= "------------------------------"."\n";
+        foreach ($tabVal as $value) {
+            //echo $value."\n";
+            $content .= (!empty($value) ? $value : (isset($value) ? $value : "NULL"))."\n";
+        }
+        file_put_contents($this->fileValide,$content,FILE_APPEND);
+        if($verif) {
+            file_put_contents($this->FileVerif,$content,FILE_APPEND);
+        }
+        return $this;
+    }
+
+    private function displayError(array|null $tabError, string|null $name = null, bool $verif = false):self {
+        $name = !empty($name) ? $name : "DATA";
+        $tabError = array_unique($tabError);
+        $content = "------------------------------"."\n\n";
+        $content .= "-- ERROR : ".$name."\n";
+        $content .= "------------------------------"."\n";
+        foreach ($tabError as $value) {
+            //echo $value."\n";
+            $content .= (!empty($value) ? $value : (isset($value) ? $value : "NULL"))."\n";
+        }
+        file_put_contents($this->FileError,$content,FILE_APPEND);
+        if($verif) {
+            file_put_contents($this->FileVerif,$content,FILE_APPEND);
+        }
+        return $this;
     }
 
         /**
          * Set the value of mail
          */
-        public function testSetMailTo(string|null $mail_to, string|null $name_to = null): self
+        public function testSetMailTo(): self
         {
-            $this->mail_to = !empty($mail_to) ? $mail_to : "";
-            $this->name_to = !empty($name_to) ? $name_to : "";
-            if (!filter_var($mail_to, FILTER_VALIDATE_EMAIL)) {
-                throw new Error("L'adresse email (".$mail_to.") n'est pas valide.", 36245000001);
+            $this->deleteFile();
+            $tabError = [];
+            $tabVal = [];
+            foreach (array_string_all() as $mail_to) {
+                foreach (array_string_all() as $name) {
+                    try {
+                        $this->object->setMailTo($mail_to, $name)
+                                    ->setMailFrom("test@test.fr")
+                                    ->send();
+                        array_push($tabVal, 'Valeur valide : '.$mail_to);
+                    } catch (Throwable $th) {
+                        array_push($tabError, 'Problème : '.$th->getMessage());
+                    }
+                }
             }
+            $this->displayValidated($tabVal, "setMailTo", true);
+            $this->displayError($tabError, "setMailTo");
+            $this->assertNotNull($this->object);
             return $this;
         }
 
         /**
          * Set the value of mail_from
          */
-        public function testSetMailFrom(string|null $mail_from, string|null $name_from = null): self
+        public function testSetMailFrom(): self
         {
-            $this->mail_from = !empty($mail_from) ? $mail_from : "";
-            $this->name_from = !empty($name_from) ? $name_from : "";
-            if (!filter_var($mail_from, FILTER_VALIDATE_EMAIL)) {
-                throw new Error("L'adresse email (".$mail_from.") n'est pas valide.", 36245000002);
+            $tabError = [];
+            $tabVal = [];
+            foreach (array_string_all() as $mail_from) {
+                foreach (array_string_all() as $name) {
+                    try {
+                        $this->object->setMailFrom($mail_from, $name)
+                                    ->setMailTo("test@test.fr")
+                                    ->send();
+                        array_push($tabVal, 'Valeur valide : '.$mail_from);
+                    } catch (Throwable $th) {
+                        array_push($tabError, 'Problème : '.$th->getMessage());
+                    }
+                }
             }
+            $this->displayValidated($tabVal, "setMailFrom", true);
+            $this->displayError($tabError, "setMailFrom");
+            $this->assertNotNull($this->object);
             return $this;
         }
 
         /**
          * Set the value of charset
          */
-        public function testSetCharset(string|null $charset): self
+        public function testSetCharset(): self
         {
-            $this->charset = !empty($charset) ? $charset : "";
+            $tabError = [];
+            $tabVal = [];
+            foreach (array_string_all() as $charset) {
+                try {
+                    $this->object->setMailFrom("test@test.fr")
+                                ->setMailTo("test@test.fr")
+                                ->setCharset($charset)
+                                ->send();
+                    array_push($tabVal, 'Valeur valide : '.$charset);
+                } catch (Throwable $th) {
+                    array_push($tabError, 'Problème : '.$th->getMessage());
+                }
+            }
+            $this->displayValidated($tabVal, "setCharset", true);
+            $this->displayError($tabError, "setCharset");
+            $this->assertNotNull($this->object);
             return $this;
         }
 
         /**
          * Set the value of objet
          */
-        public function testSetObjet(string|null $objet): self
+        public function testSetObjet(): self
         {
-            $this->objet = !empty($objet) ? $objet : "";
+            $tabError = [];
+            $tabVal = [];
+            foreach (array_string_all() as $value) {
+                $this->object->setMailFrom("test@test.fr")
+                                ->setMailTo("test@test.fr")
+                                ->setObjet($value)
+                                ->send();
+                array_push($tabVal, 'Valeur valide : '.$value);
+            }
+            $this->displayValidated($tabVal, "setObjet");
+            $this->displayError($tabError, "setObjet", true);
+            $this->assertNotNull($this->object);
             return $this;
         }
 
         /**
          * Set the value of messageHTML
          */
-        public function testSetMessageHTML(string|null $messageHTML): self
+        public function testSetMessageHTML(): self
         {
-            $this->messageHTML = $this->textAndFile($messageHTML);
+            $tabError = [];
+            $tabVal = [];
+            foreach (array_string_all() as $messageHTML) {
+                try {
+                    $this->object->setMailFrom("test@test.fr")
+                                ->setMailTo("test@test.fr")
+                                ->setMessageHTML($messageHTML)
+                                ->send();
+                    array_push($tabVal, 'Valeur valide : '.$messageHTML);
+                } catch (Throwable $th) {
+                    array_push($tabError, 'Problème : '.$th->getMessage());
+                }
+            }
+            $this->displayValidated($tabVal, "setMessageHTML");
+            $this->displayError($tabError, "setMessageHTML", true);
+            $this->assertNotNull($this->object);
             return $this;
         }
 
         /**
          * Set the value of messageText
          */
-        public function testSetMessageText(string|null $messageText): self
+        public function testSetMessageText(): self
         {
-            $this->messageText = $this->textAndFile($messageText);
+            $tabError = [];
+            $tabVal = [];
+            foreach (array_string_all() as $messageText) {
+                try {
+                    $this->object->setMailFrom("test@test.fr")
+                                ->setMailTo("test@test.fr")
+                                ->setMessageText($messageText)
+                                ->send();
+                    array_push($tabVal, 'Valeur valide : '.$messageText);
+                } catch (Throwable $th) {
+                    array_push($tabError, 'Problème : '.$th->getMessage());
+                }
+            }
+            $this->displayValidated($tabVal, "setMessageText");
+            $this->displayError($tabError, "setMessageText", true);
+            $this->assertNotNull($this->object);
             return $this;
         }
 
         /**
          * Set the value of attachment
          */
-        public function testAddAttachment(string|null $file): self
+        public function testAddAttachment(): self
         {
-            if(empty($file)) {
-                return $this;
+            $tabError = [];
+            $tabVal = [];
+            foreach (array_string_all() as $attachment) {
+                try {
+                    $this->object->setMailFrom("test@test.fr")
+                                ->setMailTo("test@test.fr")
+                                ->addAttachment($attachment)
+                                ->send();
+                    array_push($tabVal, 'Valeur valide : '.$attachment);
+                } catch (Throwable $th) {
+                    array_push($tabError, 'Problème : '.$th->getMessage());
+                }
             }
-            if(!is_file($file)) {
-                throw new Error("Le fichier (".$file.") n'est pas valide.", 36245000003);
-            }
-            array_push($this->attachments, $file);
+            $this->displayValidated($tabVal, "addAttachment", true);
+            $this->displayError($tabError, "addAttachment");
+            $this->assertNotNull($this->object);
             return $this;
         }
 
@@ -107,70 +255,28 @@ class EmailSendTest extends TestCase
          * Si le message texte est vide, il sera remplacer par le htlm (sans les balises).
          */
         public function testSend():self {
-            $mail_from_def = "\"" . $this->mail_from . "\" <" . $this->mail_from . ">";
-            if(!empty($this->name_from)) {
-                $mail_from_def = "\"" . $this->name_from . "\" <" . $this->mail_from . ">";
-            }
-            $mail_to_def = "\"" . $this->mail_to . "\" <" . $this->mail_to . ">";
-            if(!empty($this->name_to)) {
-                $mail_to_def = "\"" . $this->name_to . "\" <" . $this->mail_to . ">";
-            }
-            if (!filter_var($this->mail_to, FILTER_VALIDATE_EMAIL)) {
-                throw new Error("L'adresse email du destinataire (".$this->mail_to.") n'est pas valide.", 36245000004);
-            }
-            if (!filter_var($this->mail_from, FILTER_VALIDATE_EMAIL)) {
-                throw new Error("L'adresse email de l'expéditeur (".$this->mail_from.") n'est pas valide.", 36245000005);
-            }
-            $passage_ligne = "\n";
-            // Mary <mary@example.com>
-            if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $this->mail_to)) { // On filtre les serveurs qui rencontrent des bogues.
-                $passage_ligne = "\r\n";
-            }
-            if(empty($this->messageText)) {
-                $this->messageText = strip_tags(str_replace("<br />", "\n", $this->messageHTML));
-            }
-            //Creation de la boundary
-            $boundary = "-----=" . md5(rand());
-            //Creation du header de l'e-mail.
-            $header = "From: " . $mail_from_def . $passage_ligne;
-            $header .= "MIME-Version: 1.0" . $passage_ligne;
-            $header .= "Content-Type: multipart/alternative;" . $passage_ligne . " boundary=\"$boundary\"" . $passage_ligne;
-            //Creation du message.
-            $message = $passage_ligne . "--" . $boundary . $passage_ligne;
-            //Ajout du message au format texte.
-            $message .= "Content-Type: text/plain; charset=\"".$this->charset."\"" . $passage_ligne;
-            $message .= "Content-Transfer-Encoding: 8bit" . $passage_ligne;
-            $message .= $passage_ligne . $this->messageText . $passage_ligne;
-            //Separateur html et text
-            $message .= $passage_ligne . "--" . $boundary . $passage_ligne;
-            //Ajout du message au format HTML
-            $message .= "Content-Type: text/html; charset=\"".$this->charset."\"" . $passage_ligne;
-            $message .= "Content-Transfer-Encoding: 8bit" . $passage_ligne;
-            $message .= $passage_ligne . $this->messageHTML . $passage_ligne;
-            //Ajout de piece jointe
-            foreach ($this->attachments as $file_name) {
-                if (file_exists($file_name)) {
-                    $file_type = filetype($file_name);
-                    $file_size = filesize($file_name);
-                    
-                    if(($handle = fopen($file_name, "r"))!==false) {
-                        $content = fread($handle, $file_size);
-                        $content = chunk_split(base64_encode($content));
-                        fclose($handle);
-                    
-                        $message .= $passage_ligne .'--'.$boundary.$passage_ligne;
-                        $message .= 'Content-type:'.$file_type.';name='.basename($file_name).$passage_ligne;
-                        $message .= 'Content-transfer-encoding:base64'.$passage_ligne;
-                        $message .= $passage_ligne . $content.$passage_ligne;
-                    } else {
-                        throw new Error("Il n'est pas possible d'ouvrir le fichier (".$file_name.").", 36245000006);
+            $tabError = [];
+            $tabVal = [];
+            foreach (array_string_all() as $mail_to) {
+                foreach (array_string_all() as $mail_from) {
+                    try {
+                        if(!empty($mail_to)) {
+                            $this->object->setMailFrom($mail_to);
+                        }
+                        if(!empty($mail_from)) {
+                            $this->object->setMailFrom($mail_from);
+                        }
+                    } catch (Throwable $th) {}
+                    try {
+                        $this->object->send();
+                    } catch (Throwable $th) {
+                        array_push($tabError, 'Problème : '.$th->getMessage());
                     }
                 }
             }
-            //Fin du message
-            $message .= $passage_ligne . "--" . $boundary . "--" . $passage_ligne;
-            //Envoi de l'e-mail.
-            mail($mail_to_def, html_entity_decode($this->objet), html_entity_decode($message), $header);
+            $this->displayValidated($tabVal, "send");
+            $this->displayError($tabError, "send", true);
+            $this->assertNotNull($this->object);
             return $this;
         }
         

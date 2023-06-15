@@ -79,3 +79,10 @@ II / Tools
 # restore_sql.sh <dump file.sql>
 
 - Restore/import the sql dump inside the SQL container . 
+
+
+
+
+test phpunit =>
+root@3272be3bd716:/usr/local/apache2/unit/class/pctremail# /usr/local/bin/phpunit --log-junit /usr/local/apache2/../projecttmp/tmp/php/nb-phpunit-pctr-log.xml /usr/local/apache2/unit/class/pctremail/EmailSendTest.php
+

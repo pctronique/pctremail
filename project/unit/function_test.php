@@ -44,6 +44,13 @@ function array_folder()
     );
 }
 
+function array_email()
+{
+    return array(
+        null, "", "test@test.fr", "test1@test.fr"
+    );
+}
+
 function array_charsets()
 {
     $tab = mb_list_encodings();
@@ -54,7 +61,7 @@ function array_charsets()
 
 function array_string_all()
 {
-    return array_unique(array_merge(array_string(), array_cmd(), array_folder(), array_file(), array_charsets()));
+    return array_unique(array_merge(array_string(), array_cmd(), array_folder(), array_file(), array_email(), array_charsets()));
 }
 
 function slash_initial_pwd($folder)

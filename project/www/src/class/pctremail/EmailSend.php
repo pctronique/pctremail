@@ -44,7 +44,7 @@ if (!class_exists('EmailSend')) {
             $this->mail_to = !empty($mail_to) ? $mail_to : "";
             $this->name_to = !empty($name_to) ? $name_to : "";
             if (!filter_var($mail_to, FILTER_VALIDATE_EMAIL)) {
-                throw new Error("L'adresse email (".$mail_to.") n'est pas valide.", 36245000001);
+                throw new Error("L'adresse email (".(!empty($mail_to) ? $mail_to : (isset($mail_to) ? $mail_to : "NULL")).") n'est pas valide.", 36245000001);
             }
             return $this;
         }
@@ -57,7 +57,7 @@ if (!class_exists('EmailSend')) {
             $this->mail_from = !empty($mail_from) ? $mail_from : "";
             $this->name_from = !empty($name_from) ? $name_from : "";
             if (!filter_var($mail_from, FILTER_VALIDATE_EMAIL)) {
-                throw new Error("L'adresse email (".$mail_from.") n'est pas valide.", 36245000002);
+                throw new Error("L'adresse email (".(!empty($mail_from) ? $mail_from : (isset($mail_from) ? $mail_from : "NULL")).") n'est pas valide.", 36245000002);
             }
             return $this;
         }
@@ -80,7 +80,7 @@ if (!class_exists('EmailSend')) {
                 if(!empty($encoding = $this->encodingsChar($charset))) {
                     $this->charset = $encoding;
                 } else {
-                    throw new Exception("Le charset (".$charset.") n'est pas valide.", 36245000009);
+                    throw new Exception("Le charset (".(!empty($charset) ? $charset : (isset($charset) ? $charset : "NULL")).") n'est pas valide.", 36245000009);
                 }
             } else {
                 $this->charset = "";
@@ -106,11 +106,11 @@ if (!class_exists('EmailSend')) {
                     if(($content = file_get_contents($message))!==false) {
                         return !empty($content) ? $content : "";
                     } else {
-                        throw new Error("Il n'est pas possible d'ouvrir le fichier (".$message.").", 36245000007);
+                        throw new Error("Il n'est pas possible d'ouvrir le fichier (".(!empty($message) ? $message : (isset($message) ? $message : "NULL")).").", 36245000007);
                         return "";
                     }
                 }else {
-                    throw new Error("Le fichier n'est pas valide(".$message.").", 36245000008);
+                    throw new Error("Le fichier n'est pas valide(".(!empty($message) ? $message : (isset($message) ? $message : "NULL")).").", 36245000008);
                     return "";
                 }
             } else {
@@ -145,7 +145,7 @@ if (!class_exists('EmailSend')) {
                 return $this;
             }
             if(!is_file($file)) {
-                throw new Error("Le fichier (".$file.") n'est pas valide.", 36245000003);
+                throw new Error("Le fichier (".(!empty($file) ? $file : (isset($file) ? $file : "NULL")).") n'est pas valide.", 36245000003);
             }
             array_push($this->attachments, $file);
             return $this;
