@@ -41,9 +41,7 @@ if (!class_exists('MessageEmail')) {
          */
         public function __construct(string|null $file_message = null) {
             $this->selectVar = "{{%s}}";
-            $this->nmError = 0;
             $this->is_error = false;
-            $this->errorFile = new Error_Log();
             $this->dureeValidite = "";
             $this->object = "";
             $this->message = "";
@@ -52,12 +50,8 @@ if (!class_exists('MessageEmail')) {
             $this->lien_message = "";
             $this->lien_modif_pass = "";
             $this->lien_create_pass = "";
-            $this->config = new Config();
             $this->vars = [];
             $this->varsLien = [];
-            if(empty($file_message)) {
-                $file_message = $this->config->getFile_messages();
-            }
             if(!empty($file_message) && !empty(trim($file_message))) {
                 $file_message = trim($file_message);
                 if(!file_exists($file_message)) {
@@ -70,7 +64,6 @@ if (!class_exists('MessageEmail')) {
                         $this->is_error = true;
                         $this->nmError = 2003000001;
                         $error_message = $e;
-                        $this->errorFile->addError($error_message, $this->nmError, $file_message);
                     }
                 } else {
                     try {
@@ -79,7 +72,6 @@ if (!class_exists('MessageEmail')) {
                         $this->is_error = true;
                         $this->nmError = 2003000002;
                         $error_message = $e;
-                        $this->errorFile->addError($error_message, $this->nmError);
                     }
                 }
             } else {
@@ -89,11 +81,8 @@ if (!class_exists('MessageEmail')) {
                     $this->is_error = true;
                     $this->nmError = 2003000000;
                     $error_message = $e;
-                    $this->errorFile->addError($error_message, $this->nmError);
                 }
             }
-            $this->setLien_message($this->config->getLien_message());
-            $this->setLien_modif_pass($this->config->getLien_modif_pass());
         }
 
         /**
@@ -132,8 +121,6 @@ if (!class_exists('MessageEmail')) {
             $this->lien_message = "";
             $this->lien_modif_pass = "";
             $this->lien_create_pass = "";
-            $this->setLien_message($this->config->getLien_message());
-            $this->setLien_modif_pass($this->config->getLien_modif_pass());
             if(!empty($this->arrayIni) && array_key_exists($title, $this->arrayIni)) {
                 if(array_key_exists("object", $this->arrayIni[$title]) && array_key_exists("message", $this->arrayIni[$title])) {
                     $this->object = $this->arrayIni[$title]["object"];
@@ -249,7 +236,8 @@ if (!class_exists('MessageEmail')) {
         }
 
         private function modifLien(string|null $lien):string|null {
-            return str_replace(":/", "://", str_replace("//", "/", str_replace("/./", "/", $this->config->lien_page()."/".$lien)));
+            //return str_replace(":/", "://", str_replace("//", "/", str_replace("/./", "/", $this->config->lien_page()."/".$lien)));
+            return "";
         }
 
         /**
@@ -259,21 +247,15 @@ if (!class_exists('MessageEmail')) {
             if(empty($text)) {
                 return "";
             }
-            $lien_msg = str_replace("/./", "/", $this->config->lien_page().$this->lien_message);
+            /*$lien_msg = str_replace("/./", "/", $this->config->lien_page().$this->lien_message);
             $lien_modif_pass = str_replace("/./", "/", $this->config->lien_page().$this->lien_modif_pass);
             $lien_create_pass = str_replace("/./", "/", $this->config->lien_page().$this->lien_create_pass);
-            $text = str_replace("{{TITLE_SITE}}", $this->config->getTitleSite(), $text);
-            $text = str_replace(strtolower("{{TITLE_SITE}}"), $this->config->getTitleSite(), $text);
-            $text = str_replace("{{NAME_SITE}}", $this->config->name_site(), $text);
-            $text = str_replace(strtolower("{{NAME_SITE}}"), $this->config->name_site(), $text);
-            $text = str_replace("{{LIEN_SITE}}", $this->config->lien_page(), $text);
-            $text = str_replace(strtolower("{{LIEN_SITE}}"), $this->config->lien_page(), $text);
             $text = str_replace("{{LIEN_MSG}}", $lien_msg, $text);
             $text = str_replace(strtolower("{{LIEN_MSG}}"), $lien_msg, $text);
             $text = str_replace("{{LIEN_MODIF_PASS}}", $lien_modif_pass, $text);
             $text = str_replace(strtolower("{{LIEN_MODIF_PASS}}"), $lien_modif_pass, $text);
             $text = str_replace("{{LIEN_CREATE_PASS}}", $lien_create_pass, $text);
-            $text = str_replace(strtolower("{{LIEN_CREATE_PASS}}"), $lien_create_pass, $text);
+            $text = str_replace(strtolower("{{LIEN_CREATE_PASS}}"), $lien_create_pass, $text);*/
             $text = str_replace("{{DATE_VALIDE}}", $this->valide_code, $text);
             $text = str_replace(strtolower("{{DATE_VALIDE}}"), $this->valide_code, $text);
             $text = str_replace("{{CODE}}", $this->code, $text);

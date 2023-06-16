@@ -1,2 +1,3 @@
 <?php
-require __DIR__."/example/index.php";
+
+header('Location: ./example');
