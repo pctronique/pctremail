@@ -4,20 +4,17 @@
  * numero d'error de la classe '1003XXXXXX'
  */
 
-if (!class_exists('MessageEmailTxt')) {
-    
-    /* en cas d'erreur sur la classe */
-    include_once __DIR__ . '/../classMain/Error_Log.php';
-    include_once __DIR__ . '/Config.php';
+if (!class_exists('MessageEmail')) {
 
     /**
      * Creation de la class pour la recuperation des informations de l'entreprise
      */
-    class MessageEmailTxt {
+    class MessageEmail {
+        
+        private string|null $selectVar;
 
         private string $object;
         private string $message;
-        private Error_Log $errorFile;
         private string $lien_message;
         private string $lien_modif_pass;
         private string $lien_create_pass;
@@ -31,7 +28,6 @@ if (!class_exists('MessageEmailTxt')) {
 
         private int $nmError;
         private bool $is_error;
-        private Config|null $config;
 
         private string|null $dureeValidite;
         private string|null $code;
@@ -39,10 +35,12 @@ if (!class_exists('MessageEmailTxt')) {
         private array|null $vars;
         private array|null $varsLien;
 
+
         /**
          * le constructeur par defaut
          */
         public function __construct(string|null $file_message = null) {
+            $this->selectVar = "{{%s}}";
             $this->nmError = 0;
             $this->is_error = false;
             $this->errorFile = new Error_Log();
@@ -96,6 +94,17 @@ if (!class_exists('MessageEmailTxt')) {
             }
             $this->setLien_message($this->config->getLien_message());
             $this->setLien_modif_pass($this->config->getLien_modif_pass());
+        }
+
+        /**
+         * Set the value of selectVar
+         */
+        public function setSelectVar(string|null $selectVar): self
+        {
+            if(!empty($selectVar)) {
+                $this->selectVar = $selectVar;
+            }
+            return $this;
         }
 
         public function addVar(string|null $name, string|null $value):self {
