@@ -44,23 +44,23 @@ docs_container:${NAME_PHP_CONTAINER}
 #
 # Compile (Docs)
 #
-docs_title:damp_docs
+docs_title:${NAME_DOC}
 docs_containerExec:php
-docs_containerFileAdd:/opt/phpDocumentor/vendor/bin/phpdoc
+docs_containerFileAdd:/usr/local/bin/phpdoc
 docs_folders:core/class/
 docs_containerCmdUp:
-docs_containerCmd:#exec# #fileAdd# run --ansi --directory #srcFolder# --target #docsFolder# --cache-folder #tmpFolder# --title #title#
+docs_containerCmd:#exec# #fileAdd# run --ansi --directory #srcFolder# --target #docsFolder# --cache-folder #tmpFolder# --title #title# --visibility public,protected
 docs_containerCmdDown:
 #
 # Project (Docs)
 #
-docs_srcFolder:project/www
+docs_srcFolder:project/www/src/class/pctremail
 docs_docsFolder:project/docs
 docs_tmp:projecttmp/tmp/php
 #
 # Container (Docs)
 #
 docs_projectFolderDocker:/usr/local/apache2
-docs_srcFolderDocker:www
+docs_srcFolderDocker:www/src/class/pctremail
 docs_docsFolderDocker:docs
 docs_tmpDocker:../projecttmp/tmp/php

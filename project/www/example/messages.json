@@ -1,0 +1,6 @@
+{
+    "message_1" : {
+        "object" : "objet",
+        "message" : "message {{TEST_V1}}"
+    }
+}

@@ -4,98 +4,98 @@
  * numero d'error de la classe '1003XXXXXX'
  */
 
+// verifier qu'on n'a pas deja creer la classe
 if (!class_exists('MessageEmail')) {
 
     /**
-     * Creation de la class pour la recuperation des informations de l'entreprise
+     * Récupération d'un message et le modifier avant de l'envoyer par e-mail.
+     * (numero d'error de la classe '1003XXXXXX')
+     * 
+     * @version 1.1.1.0
+     * @author NAULOT ludovic <dev@pctronique.fr>
      */
     class MessageEmail {
         
         private string|null $selectVar;
-
-        private string $object;
-        private string $message;
-        private string $lien_message;
-        private string $lien_modif_pass;
-        private string $lien_create_pass;
-
-        /**
-         * Le contenu du fichier ini
-         *
-         * @var array du contenu du fichier ini
-         */
-        private array $arrayIni;
-
-        private int $nmError;
-        private bool $is_error;
-
-        private string|null $dureeValidite;
-        private string|null $code;
-        private string|null $valide_code;
+        private string|null $object;
+        private string|null $message;
+        private array|null $arrContent;
         private array|null $vars;
-        private array|null $varsLien;
-
-
+        private bool $isFileIni;
+        private bool $isFileJson;
+        
         /**
-         * le constructeur par defaut
+         * le constructeur.
+         * 
+         * @param string|null $file_message
+         * @return string
+         * @throws Error
          */
         public function __construct(string|null $file_message = null) {
             $this->selectVar = "{{%s}}";
-            $this->is_error = false;
-            $this->dureeValidite = "";
             $this->object = "";
             $this->message = "";
-            $this->code = "";
-            $this->valide_code = "";
-            $this->lien_message = "";
-            $this->lien_modif_pass = "";
-            $this->lien_create_pass = "";
+            $this->isFileIni = false;
+            $this->isFileJson = false;
+            $this->arrContent = [];
             $this->vars = [];
-            $this->varsLien = [];
-            if(!empty($file_message) && !empty(trim($file_message))) {
-                $file_message = trim($file_message);
-                if(!file_exists($file_message)) {
-                    $file_message .= ".example";
-                }
-                if(!file_exists($file_message)) {
-                    try {
-                        throw new Exception("Impossible de trouver le fichier.\n");
-                    } catch (Exception $e) {
-                        $this->is_error = true;
-                        $this->nmError = 2003000001;
-                        $error_message = $e;
+            if(!empty($file_message) && is_file($file_message)) {
+                if(($mime = mime_content_type($file_message))!==false && (strtolower($mime) == "text/plain" || strtolower($mime) == "application/json")) {
+                    if(($content = file_get_contents($file_message))!==false) {
+                        if(strtolower($mime) == "application/json") {
+                            try {
+                                $contentJson = json_decode($content, true);
+                                $this->arrContent = $contentJson;
+                                $this->isFileJson = !empty($this->arrContent);
+                            } catch (Throwable $e) {
+                                $this->isFileJson = false;
+                            }
+                        } else {
+                            try {
+                                $contentIni = parse_ini_string($content, true);
+                                $this->arrContent = $contentIni;
+                                $this->isFileIni = !empty($this->arrContent);
+                            } catch (Throwable $e) {
+                                $this->isFileIni = false;
+                            }
+                        }
+                        if(!($this->isFileIni || $this->isFileJson)) {
+                            throw new Error("Il n'est pas possible de lire le fichier (".(!empty($file_message) ? $file_message : (isset($file_message) ? $file_message : "NULL")).").", 63736000002);
+                        }
+                    } else {
+                        throw new Error("Il n'est pas possible d'ouvrir le fichier (".(!empty($file_message) ? $file_message : (isset($file_message) ? $file_message : "NULL")).").", 63736000001);
                     }
-                } else {
-                    try {
-                        $this->arrayIni = parse_ini_file($file_message, true);
-                    } catch (Exception $e) {
-                        $this->is_error = true;
-                        $this->nmError = 2003000002;
-                        $error_message = $e;
-                    }
-                }
-            } else {
-                try {
-                    throw new Exception("Il n'y a pas de nom de fichier dans la configuration (pour les messages)\n");
-                } catch (Exception $e) {
-                    $this->is_error = true;
-                    $this->nmError = 2003000000;
-                    $error_message = $e;
+                }else {
+                    throw new Error("Le fichier n'est pas valide(".(!empty($file_message) ? $file_message : (isset($file_message) ? $file_message : "NULL")).").", 36245000006);
+                    return "";
                 }
             }
         }
 
         /**
-         * Set the value of selectVar
+         * 
+         * @param string|null $selectVar
+         * @return self
+         * @throws Error
          */
         public function setSelectVar(string|null $selectVar): self
         {
+            if (!str_contains($selectVar, '%s')) {
+                throw new Error("Le contenu de la sélection de variable n'est pas valide, il manque %s (".$selectVar.")", 63736000003);
+                return $this;
+            }
             if(!empty($selectVar)) {
                 $this->selectVar = $selectVar;
             }
             return $this;
         }
 
+        /**
+         * 
+         * @param string|null $name
+         * @param string|null $value
+         * @return self
+         */
         public function addVar(string|null $name, string|null $value):self {
             if(!empty($name) && !empty($value)) {
                 $this->vars[$name] = $value;
@@ -103,188 +103,94 @@ if (!class_exists('MessageEmail')) {
             return $this;
         }
 
-        public function addVarLien(string|null $name, string|null $value):self {
-            if(!empty($name) && !empty($value)) {
-                $this->varsLien[$name] = $value;
-            }
-            return $this;
-        }
-
         /**
-         * recuperer le message.
+         * 
+         * @param string|null $title
+         * @return self
          */
         public function recupeMessage(string|null $title):self {
             $this->object = "";
             $this->message = "";
-            $this->code = "";
-            $this->valide_code = "";
-            $this->lien_message = "";
-            $this->lien_modif_pass = "";
-            $this->lien_create_pass = "";
-            if(!empty($this->arrayIni) && array_key_exists($title, $this->arrayIni)) {
-                if(array_key_exists("object", $this->arrayIni[$title]) && array_key_exists("message", $this->arrayIni[$title])) {
-                    $this->object = $this->arrayIni[$title]["object"];
-                    $this->message = $this->arrayIni[$title]["message"];
+            if(($this->isFileIni || $this->isFileJson) && !empty($this->arrContent) && array_key_exists($title, $this->arrContent)) {
+                if(array_key_exists("object", $this->arrContent[$title]) && array_key_exists("message", $this->arrContent[$title])) {
+                    $this->object = $this->modifText($this->arrContent[$title]["object"]);
+                    $this->message = $this->modifText($this->arrContent[$title]["message"]);
                 }
             }
             return $this;
         }
 
         /**
-         * le numero d'erreur
-         */ 
-        public function getNmError():int
-        {
-                return $this->nmError;
-        }
-
-        /**
-         * vifier l'existance d'une erreur
-         */ 
-        public function getIs_error():bool
-        {
-                return $this->is_error;
-        }
-
-
-        /**
-         * Set the value of dureeValidite
-         */
-        public function setDureeValidite(string|null $dureeValidite): self
-        {
-            if(!empty($dureeValidite)) {
-                $this->dureeValidite = $dureeValidite;
-            } else {
-                $this->dureeValidite = "";
-            }
-            return $this;
-        }
-
-        /**
-         * ajouter un code
-         *
-         * @return  self
-         */ 
-        public function setCode(string|null $code):self
-        {
-            if(!empty($code)) {
-                $this->code = $code;
-            } else {
-                $this->code = "";
-            }
-            return $this;
-        }
-
-        /**
-         * ajouter un code de validation
-         *
-         * @return  self
-         */ 
-        public function setValide_code(string|null $valide_code):self
-        {
-            if(!empty($valide_code)) {
-                $this->valide_code = $valide_code;
-            } else {
-                $this->valide_code = "";
-            }
-            return $this;
-        }
-
-        /**
-         * modifier le lien pour envoyer un message.
-         *
-         * @return  self
-         */ 
-        public function setLien_message(string|null $lien_message):self
-        {
-            if(!empty($lien_message)) {
-                $this->lien_message = $lien_message;
-            } else {
-                $this->lien_message = "";
-            }
-            return $this;
-        }
-
-        /**
-         * modifier le lien pour modifier le mot de passe.
-         *
-         * @return  self
-         */ 
-        public function setLien_modif_pass(string|null $lien_modif_pass):self
-        {
-            if(!empty($lien_modif_pass)) {
-                $this->lien_modif_pass = $lien_modif_pass;
-            } else {
-                $this->lien_modif_pass = "";
-            }
-            return $this;
-        }
-
-        /**
-         * modifier le lien de la creation du mot de passe.
-         *
-         * @return  self
-         */ 
-        public function setLien_create_pass(string|null $lien_create_pass):self
-        {
-            if(!empty($lien_create_pass)) {
-                $this->lien_create_pass = $lien_create_pass;
-            } else {
-                $this->lien_create_pass = "";
-            }
-            return $this;
-        }
-
-        private function modifLien(string|null $lien):string|null {
-            //return str_replace(":/", "://", str_replace("//", "/", str_replace("/./", "/", $this->config->lien_page()."/".$lien)));
-            return "";
-        }
-
-        /**
-         * remplacer les variables dans les messages.
+         * 
+         * @param string|null $text
+         * @return string|null
          */
         private function modifText(string|null $text):string|null {
             if(empty($text)) {
                 return "";
             }
-            /*$lien_msg = str_replace("/./", "/", $this->config->lien_page().$this->lien_message);
-            $lien_modif_pass = str_replace("/./", "/", $this->config->lien_page().$this->lien_modif_pass);
-            $lien_create_pass = str_replace("/./", "/", $this->config->lien_page().$this->lien_create_pass);
-            $text = str_replace("{{LIEN_MSG}}", $lien_msg, $text);
-            $text = str_replace(strtolower("{{LIEN_MSG}}"), $lien_msg, $text);
-            $text = str_replace("{{LIEN_MODIF_PASS}}", $lien_modif_pass, $text);
-            $text = str_replace(strtolower("{{LIEN_MODIF_PASS}}"), $lien_modif_pass, $text);
-            $text = str_replace("{{LIEN_CREATE_PASS}}", $lien_create_pass, $text);
-            $text = str_replace(strtolower("{{LIEN_CREATE_PASS}}"), $lien_create_pass, $text);*/
-            $text = str_replace("{{DATE_VALIDE}}", $this->valide_code, $text);
-            $text = str_replace(strtolower("{{DATE_VALIDE}}"), $this->valide_code, $text);
-            $text = str_replace("{{CODE}}", $this->code, $text);
-            $text = str_replace(strtolower("{{CODE}}"), $this->code, $text);
-            $text = str_replace("{{DUREE_VALIDE}}", $this->dureeValidite, $text);
-            $text = str_replace(strtolower("{{DUREE_VALIDE}}"), $this->dureeValidite, $text);
             foreach ($this->vars as $key => $value) {
-                $text = str_replace(strtoupper("{{".$key."}}"), $value, $text);
-            }
-            foreach ($this->varsLien as $key => $value) {
-                $text = str_replace(strtoupper("{{".$key."}}"), $this->modifLien($value), $text);
+                $text = str_replace(strtoupper(str_replace("%s", $key, $this->selectVar)), $value, $text);
+                $text = str_replace(strtolower(str_replace("%s", $key, $this->selectVar)), $value, $text);
             }
             return $text;
         }
 
         /**
-         * recuperer le message.
-         */ 
+         * 
+         * @return string|null
+         */
         public function getMessage():string|null
         {
                 return $this->modifText($this->message);
         }
 
         /**
-         * recuperer l'objet du message
-         */ 
+         * 
+         * @return string|null
+         */
         public function getObject():string|null
         {
                 return $this->modifText($this->object);
+        }
+
+        /**
+         * 
+         * @param string|null $object
+         * @return string|null
+         */
+        public function object(string|null $object):string|null
+        {
+            if(empty($object)) {
+                return "";
+            }
+            return $this->modifText($object);
+        }
+
+        /**
+         * 
+         * @param string|null $message
+         * @return string|null
+         * @throws Error
+         */
+        public function message(string|null $message):string|null
+        {
+            if(empty($message)) {
+                return "";
+            }
+            if(!empty($message) && is_file($message)) {
+                if(($mime = mime_content_type($message))!==false && strtolower($mime) == "text/plain") {
+                    if(($content = file_get_contents($message))!==false) {
+                        $message = $content;
+                    } else {
+                        throw new Error("Il n'est pas possible d'ouvrir le fichier (".(!empty($message) ? $message : (isset($message) ? $message : "NULL")).").", 63736000004);
+                    }
+                }else {
+                    throw new Error("Le fichier n'est pas valide(".(!empty($message) ? $message : (isset($message) ? $message : "NULL")).").", 63736000005);
+                    return "";
+                }
+            }
+            return $this->modifText($message);
         }
 
     }

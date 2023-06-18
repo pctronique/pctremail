@@ -1,14 +1,14 @@
 <?php
-/**
- * Pour se connecter a la base de donner a partir du fichier "sgbd_config.php".
- * Pouvoir avoir une connexion a la base de donnees differentes.
- * numero d'error de la classe '36245XXXXXX'
- */
-
-// verifier qu'on n'a pas deja creer la fonction
+// verifier qu'on n'a pas deja creer la classe
 if (!class_exists('EmailSend')) {
 
-    // fonction pour faire la connexion a la base de donnes
+    /**
+     * Pour envoyer des e-mail.
+     * (numero d'error de la classe '36245XXXXXX')
+     * 
+     * @version 1.1.1.0
+     * @author NAULOT ludovic <dev@pctronique.fr>
+     */
     class EmailSend {
 
         private string|null $mail_to;
@@ -22,9 +22,7 @@ if (!class_exists('EmailSend')) {
         private array|null $attachments;
 
         /**
-         * Undocumented function
-         *
-         * @param integer $time timestamp Unix
+         * le constructeur par defaut.
          */
         public function __construct() {
             $this->mail_to = "";
@@ -37,7 +35,11 @@ if (!class_exists('EmailSend')) {
         }
 
         /**
-         * Set the value of mail
+         * 
+         * @param string|null $mail_to
+         * @param string|null $name_to
+         * @return self
+         * @throws Error
          */
         public function setMailTo(string|null $mail_to, string|null $name_to = null): self
         {
@@ -50,7 +52,11 @@ if (!class_exists('EmailSend')) {
         }
 
         /**
-         * Set the value of mail_from
+         * 
+         * @param string|null $mail_from
+         * @param string|null $name_from
+         * @return self
+         * @throws Error
          */
         public function setMailFrom(string|null $mail_from, string|null $name_from = null): self
         {
@@ -62,6 +68,11 @@ if (!class_exists('EmailSend')) {
             return $this;
         }
 
+        /**
+         * 
+         * @param string|null $charset
+         * @return string|null
+         */
         private function encodingsChar(string|null $charset): string|null {
             foreach (mb_list_encodings() as $value) {
                 if(strtolower($charset) == strtolower($value)) {
@@ -72,7 +83,10 @@ if (!class_exists('EmailSend')) {
         }
 
         /**
-         * Set the value of charset
+         * 
+         * @param string|null $charset
+         * @return self
+         * @throws Exception
          */
         public function setCharset(string|null $charset): self
         {
@@ -89,7 +103,9 @@ if (!class_exists('EmailSend')) {
         }
 
         /**
-         * Set the value of objet
+         * 
+         * @param string|null $objet
+         * @return self
          */
         public function setObjet(string|null $objet): self
         {
@@ -99,6 +115,9 @@ if (!class_exists('EmailSend')) {
 
         /**
          * 
+         * @param string|null $message
+         * @return string|null
+         * @throws Error
          */
         private function textAndFile(string|null $message): string|null {
             if (file_exists($message)) {
@@ -119,7 +138,9 @@ if (!class_exists('EmailSend')) {
         }
 
         /**
-         * Set the value of messageHTML
+         * 
+         * @param string|null $messageHTML
+         * @return self
          */
         public function setMessageHTML(string|null $messageHTML): self
         {
@@ -128,7 +149,9 @@ if (!class_exists('EmailSend')) {
         }
 
         /**
-         * Set the value of messageText
+         * 
+         * @param string|null $messageText
+         * @return self
          */
         public function setMessageText(string|null $messageText): self
         {
@@ -137,7 +160,10 @@ if (!class_exists('EmailSend')) {
         }
 
         /**
-         * Set the value of attachment
+         * 
+         * @param string|null $file
+         * @return self
+         * @throws Error
          */
         public function addAttachment(string|null $file): self
         {
@@ -152,8 +178,9 @@ if (!class_exists('EmailSend')) {
         }
 
         /**
-         * Pour envoyer un message html (si le message ne peut pas etre lut en html, il sera affiche en texte).
-         * Si le message texte est vide, il sera remplacer par le htlm (sans les balises).
+         * 
+         * @return self
+         * @throws Error
          */
         public function send():self {
             $mail_from_def = "\"" . $this->mail_from . "\" <" . $this->mail_from . ">";

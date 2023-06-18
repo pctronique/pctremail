@@ -79,9 +79,9 @@ RUN mkdir /opt/phpDocumentor/
 WORKDIR /opt/phpDocumentor/
 
 #RUN composer require "phpdocumentor/phpdocumentor:^3"
-#RUN wget https://www.phpdoc.org/phpDocumentor.phar
-#RUN cp phpDocumentor.phar /usr/local/bin/phpdoc && chmod +x /usr/local/bin/phpdoc
-#RUN pear channel-discover pear.phpdoc.org
+RUN wget https://www.phpdoc.org/phpDocumentor.phar
+RUN cp phpDocumentor.phar /usr/local/bin/phpdoc && chmod +x /usr/local/bin/phpdoc
+RUN pear channel-discover pear.phpdoc.org
 #RUN pear install phpdoc/phpDocumentor
 
 WORKDIR /tmp

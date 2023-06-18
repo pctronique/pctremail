@@ -13,7 +13,7 @@ function array_string()
     return array(
         null, "", "tintin", "####", "////", "/opt/titi",
         "Pc*#014HgIl*#78", "0125", "01.25", "01,25", "A15F", "0", "1", "2",
-        "/usr/local/projecttmp/tmp/php", "/", "/opt/tmp"
+        "/usr/local/projecttmp/tmp/php", "/", "/opt/tmp", "message_1", "[%s]"
     );
 }
 
@@ -29,7 +29,8 @@ function array_cmd()
 
 function array_file()
 {
-    return array(null, RACINE_WWW . "/favicon.ico", RACINE_WWW . "/example/test.html");
+    return array(null, RACINE_WWW . "/favicon.ico", RACINE_WWW . "/example/test.html", 
+                    RACINE_WWW . "/example/message.ini", RACINE_WWW . "/example/messages.json");
 }
 
 function array_folder()
