@@ -8,7 +8,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EmailSend\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "le\u0020constructeur\u0020par\u0020defaut.",
+            "summary": "le\u0020constructeur\u0020par\u0020d\u00E9faut.",
             "url": "classes/EmailSend.html#method___construct"
         },                {
             "fqsen": "\\EmailSend\u003A\u003AsetMailTo\u0028\u0029",
@@ -23,7 +23,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EmailSend\u003A\u003AsetCharset\u0028\u0029",
             "name": "setCharset",
-            "summary": "Entrer\u0020le\u0020type\u0020de\u0020codage\u0020du\u0020text\u0020\u0028exemple\u0020\u003A\u0020UTF\u002D8\u0029.",
+            "summary": "Entrer\u0020le\u0020jeu\u0020de\u0020caract\u00E8res\u0020du\u0020text\u0020\u0028exemple\u0020\u003A\u0020UTF\u002D8\u0029.",
             "url": "classes/EmailSend.html#method_setCharset"
         },                {
             "fqsen": "\\EmailSend\u003A\u003AsetObjet\u0028\u0029",
@@ -38,7 +38,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EmailSend\u003A\u003AsetMessageText\u0028\u0029",
             "name": "setMessageText",
-            "summary": "Entrer\u0020le\u0020message\u0020sous\u0020format\u0020texte\u0020html\u0020ou\u0020le\u0020chemin\u0020du\u0020fichier\u0020texte.",
+            "summary": "Entrer\u0020le\u0020message\u0020sous\u0020format\u0020texte\u0020ou\u0020le\u0020chemin\u0020du\u0020fichier\u0020texte.",
             "url": "classes/EmailSend.html#method_setMessageText"
         },                {
             "fqsen": "\\EmailSend\u003A\u003AaddAttachment\u0028\u0029",
@@ -63,37 +63,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\MessageEmail\u003A\u003AsetSelectVar\u0028\u0029",
             "name": "setSelectVar",
-            "summary": "",
+            "summary": "Pour\u0020pouvoir\u0020s\u00E9lectionner\u0020une\u0020variable\u0020dans\u0020le\u0020message\u0020et\u0020doit\u0020contenir\u0020\u0025s.",
             "url": "classes/MessageEmail.html#method_setSelectVar"
         },                {
             "fqsen": "\\MessageEmail\u003A\u003AaddVar\u0028\u0029",
             "name": "addVar",
-            "summary": "",
+            "summary": "Ajouter\u0020une\u0020variable",
             "url": "classes/MessageEmail.html#method_addVar"
         },                {
             "fqsen": "\\MessageEmail\u003A\u003ArecupeMessage\u0028\u0029",
             "name": "recupeMessage",
-            "summary": "",
+            "summary": "r\u00E9cup\u00E9rer\u0020un\u0020message\u0020et\u0020l\u0027objet\u0020dans\u0020le\u0020fichier\u0020ini\u0020ou\u0020json",
             "url": "classes/MessageEmail.html#method_recupeMessage"
         },                {
             "fqsen": "\\MessageEmail\u003A\u003AgetMessage\u0028\u0029",
             "name": "getMessage",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E9rer\u0020le\u0020message\u0020du\u0020fichier\u0020apr\u00E9s\u0020utilisation\u0020de\u0020la\u0020m\u00E9thode\u0020recupeMessage.",
             "url": "classes/MessageEmail.html#method_getMessage"
         },                {
             "fqsen": "\\MessageEmail\u003A\u003AgetObject\u0028\u0029",
             "name": "getObject",
-            "summary": "",
+            "summary": "R\u00E9cup\u00E9rer\u0020l\u0027objet\u0020du\u0020fichier\u0020apr\u00E9s\u0020utilisation\u0020de\u0020la\u0020m\u00E9thode\u0020recupeMessage.",
             "url": "classes/MessageEmail.html#method_getObject"
         },                {
             "fqsen": "\\MessageEmail\u003A\u003Aobject\u0028\u0029",
             "name": "object",
-            "summary": "",
+            "summary": "Entrer\u0020un\u0020texte\u0020pour\u0020l\u0027objet\u0020avec\u0020des\u0020variables\u0020\u00E0\u0020remplacer.",
             "url": "classes/MessageEmail.html#method_object"
         },                {
             "fqsen": "\\MessageEmail\u003A\u003Amessage\u0028\u0029",
             "name": "message",
-            "summary": "",
+            "summary": "Entrer\u0020un\u0020texte\u0020ou\u0020fichier\u0020texte\u0020pour\u0020le\u0020message\u0020avec\u0020des\u0020variables\u0020\u00E0\u0020remplacer.",
             "url": "classes/MessageEmail.html#method_message"
         },                {
             "fqsen": "\\",

@@ -97,13 +97,13 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="MessageEmail.php"><a href="files/messageemail.html"><abbr title="MessageEmail.php">MessageEmail.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
             <p class="phpdocumentor-summary">Récupération d&#039;un message et le modifier avant de l&#039;envoyer par e-mail.</p>
 
-    <section class="phpdocumentor-description"><p>(numero d'error de la classe '1003XXXXXX')</p>
+    <section class="phpdocumentor-description"><p>(Numéro d'error de la classe '63736XXXXXX')</p>
 </section>
 
 
@@ -154,49 +154,49 @@
     <span>
                                 &nbsp;: self    </span>
 </dt>
-<dd></dd>
+<dd>Ajouter une variable</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/MessageEmail.html#method_getMessage">getMessage()</a>
     <span>
                                 &nbsp;: string|null    </span>
 </dt>
-<dd></dd>
+<dd>Récupérer le message du fichier aprés utilisation de la méthode recupeMessage.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/MessageEmail.html#method_getObject">getObject()</a>
     <span>
                                 &nbsp;: string|null    </span>
 </dt>
-<dd></dd>
+<dd>Récupérer l&#039;objet du fichier aprés utilisation de la méthode recupeMessage.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/MessageEmail.html#method_message">message()</a>
     <span>
                                 &nbsp;: string|null    </span>
 </dt>
-<dd></dd>
+<dd>Entrer un texte ou fichier texte pour le message avec des variables à remplacer.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/MessageEmail.html#method_object">object()</a>
     <span>
                                 &nbsp;: string|null    </span>
 </dt>
-<dd></dd>
+<dd>Entrer un texte pour l&#039;objet avec des variables à remplacer.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/MessageEmail.html#method_recupeMessage">recupeMessage()</a>
     <span>
                                 &nbsp;: self    </span>
 </dt>
-<dd></dd>
+<dd>récupérer un message et l&#039;objet dans le fichier ini ou json</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/MessageEmail.html#method_setSelectVar">setSelectVar()</a>
     <span>
                                 &nbsp;: self    </span>
 </dt>
-<dd></dd>
+<dd>Pour pouvoir sélectionner une variable dans le message et doit contenir %s.</dd>
 
         </dl>
 
@@ -224,7 +224,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="MessageEmail.php"><a href="files/messageemail.html"><abbr title="MessageEmail.php">MessageEmail.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -234,7 +234,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file_message</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Il est possible d'entrer un fichier ini ou json qui contient les messages.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -242,7 +244,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>inclure un fichier (ini ou json)</p>
+</section>
+
             </dd>
             </dl>
 
@@ -258,7 +262,9 @@
                 <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><abbr title="\Error">Error</abbr></span>
                                                             
-                                             
+                                                 <section class="phpdocumentor-description"><p>en cas d'erreur de fichier</p>
+</section>
+
                                     </dd>
                         </dl>
 
@@ -281,11 +287,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="MessageEmail.php"><a href="files/messageemail.html"><abbr title="MessageEmail.php">MessageEmail.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Ajouter une variable</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">addVar</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
@@ -298,14 +305,18 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>le nom de la variable</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$value</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>entrer une valeur à la variable</p>
+</section>
+
             </dd>
             </dl>
 
@@ -330,11 +341,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="MessageEmail.php"><a href="files/messageemail.html"><abbr title="MessageEmail.php">MessageEmail.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">143</span>
+    <span class="phpdocumentor-element-found-in__line">155</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Récupérer le message du fichier aprés utilisation de la méthode recupeMessage.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getMessage</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
@@ -346,7 +358,9 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>récupérer le message.</p>
+</section>
+
     
 </article>
                     <article
@@ -362,11 +376,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="MessageEmail.php"><a href="files/messageemail.html"><abbr title="MessageEmail.php">MessageEmail.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">152</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Récupérer l&#039;objet du fichier aprés utilisation de la méthode recupeMessage.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getObject</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
@@ -378,7 +393,9 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>récupérer l'objet</p>
+</section>
+
     
 </article>
                     <article
@@ -394,11 +411,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="MessageEmail.php"><a href="files/messageemail.html"><abbr title="MessageEmail.php">MessageEmail.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">192</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Entrer un texte ou fichier texte pour le message avec des variables à remplacer.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">message</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$message</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
@@ -411,7 +429,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>le message (fichier ou texte) avec des variables à remplacer.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -434,7 +454,9 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>le message avec des variables remplacés.</p>
+</section>
+
     
 </article>
                     <article
@@ -450,11 +472,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="MessageEmail.php"><a href="files/messageemail.html"><abbr title="MessageEmail.php">MessageEmail.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">176</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Entrer un texte pour l&#039;objet avec des variables à remplacer.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">object</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
@@ -467,7 +490,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>texte objet avec variable</p>
+</section>
+
             </dd>
             </dl>
 
@@ -476,7 +501,9 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>texte objet avec variable remplacé</p>
+</section>
+
     
 </article>
                     <article
@@ -492,11 +519,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="MessageEmail.php"><a href="files/messageemail.html"><abbr title="MessageEmail.php">MessageEmail.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">récupérer un message et l&#039;objet dans le fichier ini ou json</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">recupeMessage</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$title</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
@@ -509,7 +537,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>titre du message</p>
+</section>
+
             </dd>
             </dl>
 
@@ -534,16 +564,19 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="MessageEmail.php"><a href="files/messageemail.html"><abbr title="MessageEmail.php">MessageEmail.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Pour pouvoir sélectionner une variable dans le message et doit contenir %s.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setSelectVar</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$selectVar</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>exemple : {{%s}}</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -551,7 +584,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>la sélection de variable doit contenir %s.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -567,7 +602,9 @@
                 <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><abbr title="\Error">Error</abbr></span>
                                                             
-                                             
+                                                 <section class="phpdocumentor-description"><p>si le nom ne contient pas %s</p>
+</section>
+
                                     </dd>
                         </dl>
 
