@@ -13,42 +13,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\EmailSend\u003A\u003AsetMailTo\u0028\u0029",
             "name": "setMailTo",
-            "summary": "",
+            "summary": "Entrer\u0020le\u0020destinataire.",
             "url": "classes/EmailSend.html#method_setMailTo"
         },                {
             "fqsen": "\\EmailSend\u003A\u003AsetMailFrom\u0028\u0029",
             "name": "setMailFrom",
-            "summary": "",
+            "summary": "Entrer\u0020l\u0027exp\u00E9diteur.",
             "url": "classes/EmailSend.html#method_setMailFrom"
         },                {
             "fqsen": "\\EmailSend\u003A\u003AsetCharset\u0028\u0029",
             "name": "setCharset",
-            "summary": "",
+            "summary": "Entrer\u0020le\u0020type\u0020de\u0020codage\u0020du\u0020text\u0020\u0028exemple\u0020\u003A\u0020UTF\u002D8\u0029.",
             "url": "classes/EmailSend.html#method_setCharset"
         },                {
             "fqsen": "\\EmailSend\u003A\u003AsetObjet\u0028\u0029",
             "name": "setObjet",
-            "summary": "",
+            "summary": "Entrer\u0020l\u0027objet\u0020du\u0020message",
             "url": "classes/EmailSend.html#method_setObjet"
         },                {
             "fqsen": "\\EmailSend\u003A\u003AsetMessageHTML\u0028\u0029",
             "name": "setMessageHTML",
-            "summary": "",
+            "summary": "Entrer\u0020le\u0020message\u0020sous\u0020format\u0020texte\u0020html\u0020ou\u0020le\u0020chemin\u0020du\u0020fichier\u0020texte\u0020html.",
             "url": "classes/EmailSend.html#method_setMessageHTML"
         },                {
             "fqsen": "\\EmailSend\u003A\u003AsetMessageText\u0028\u0029",
             "name": "setMessageText",
-            "summary": "",
+            "summary": "Entrer\u0020le\u0020message\u0020sous\u0020format\u0020texte\u0020html\u0020ou\u0020le\u0020chemin\u0020du\u0020fichier\u0020texte.",
             "url": "classes/EmailSend.html#method_setMessageText"
         },                {
             "fqsen": "\\EmailSend\u003A\u003AaddAttachment\u0028\u0029",
             "name": "addAttachment",
-            "summary": "",
+            "summary": "Ajouter\u0020une\u0020pi\u00E8ce\u0020jointe\u0020\u00E0\u0020l\u0027e\u002Dmail",
             "url": "classes/EmailSend.html#method_addAttachment"
         },                {
             "fqsen": "\\EmailSend\u003A\u003Asend\u0028\u0029",
             "name": "send",
-            "summary": "",
+            "summary": "Pour\u0020envoyer\u0020l\u0027e\u002Dmail\u0020au\u0020destinataire.",
             "url": "classes/EmailSend.html#method_send"
         },                {
             "fqsen": "\\MessageEmail",

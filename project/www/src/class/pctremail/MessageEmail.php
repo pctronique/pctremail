@@ -1,15 +1,10 @@
 <?php
-/**
- * Pour lire les informations de l'entreprise.
- * numero d'error de la classe '1003XXXXXX'
- */
-
 // verifier qu'on n'a pas deja creer la classe
 if (!class_exists('MessageEmail')) {
 
     /**
      * Récupération d'un message et le modifier avant de l'envoyer par e-mail.
-     * (numero d'error de la classe '1003XXXXXX')
+     * (Numéro d'error de la classe '63736XXXXXX')
      * 
      * @version 1.1.1.0
      * @author NAULOT ludovic <dev@pctronique.fr>
