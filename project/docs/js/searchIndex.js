@@ -73,7 +73,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\MessageEmail\u003A\u003ArecupeMessage\u0028\u0029",
             "name": "recupeMessage",
-            "summary": "r\u00E9cup\u00E9rer\u0020un\u0020message\u0020et\u0020l\u0027objet\u0020dans\u0020le\u0020fichier\u0020ini\u0020ou\u0020json",
+            "summary": "r\u00E9cup\u00E9rer\u0020un\u0020message\u0020et\u0020l\u0027objet\u0020dans\u0020le\u0020fichier\u0020ini\u0020ou\u0020json\u0020\u00E0\u0020partir\u0020d\u0027un\u0020nom\u0020de\u0020cl\u00E9",
             "url": "classes/MessageEmail.html#method_recupeMessage"
         },                {
             "fqsen": "\\MessageEmail\u003A\u003AgetMessage\u0028\u0029",
@@ -95,6 +95,11 @@ Search.appendIndex(
             "name": "message",
             "summary": "Entrer\u0020un\u0020texte\u0020ou\u0020fichier\u0020texte\u0020pour\u0020le\u0020message\u0020avec\u0020des\u0020variables\u0020\u00E0\u0020remplacer.",
             "url": "classes/MessageEmail.html#method_message"
+        },                {
+            "fqsen": "\\MessageEmail\u003A\u003AgetKeys\u0028\u0029",
+            "name": "getKeys",
+            "summary": "R\u00E9cup\u00E8re\u0020les\u0020cl\u00E9s\u0020du\u0020fichier.",
+            "url": "classes/MessageEmail.html#method_getKeys"
         },                {
             "fqsen": "\\",
             "name": "\\",

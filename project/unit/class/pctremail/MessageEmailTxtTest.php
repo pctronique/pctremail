@@ -98,6 +98,7 @@ class MessageEmailTest extends TestCase
                 $this->object = new MessageEmail($value);
                 $this->testGetMessage();
                 $this->testGetObject();
+                $this->testGetKeys();
                 array_push($tabVal, 'Valeur valide : ' . $value);
             } catch (Throwable $th) {
                 array_push($tabError, 'Problème : ' . $th->getMessage());
@@ -118,6 +119,7 @@ class MessageEmailTest extends TestCase
                 $this->object->setSelectVar($value);
                 $this->testGetMessage();
                 $this->testGetObject();
+                $this->testGetKeys();
                 array_push($tabVal, 'Valeur valide : ' . $value);
             } catch (Throwable $th) {
                 array_push($tabError, 'Problème : ' . $th->getMessage());
@@ -136,6 +138,7 @@ class MessageEmailTest extends TestCase
                 $this->object->addVar($value, $value2);
                 $this->testGetMessage();
                 $this->testGetObject();
+                $this->testGetKeys();
             }
         }
         $this->assertNotNull($this->object);
@@ -151,6 +154,7 @@ class MessageEmailTest extends TestCase
             $this->object->recupeMessage($value);
             $this->testGetMessage();
             $this->testGetObject();
+            $this->testGetKeys();
         }
         $this->assertNotNull($this->object);
         return $this;
@@ -210,6 +214,14 @@ class MessageEmailTest extends TestCase
         }
         $this->displayValidated($tabVal, "Message");
         $this->displayError($tabError, "Message", true);
+        return $this;
+    }
+
+    public function testGetKeys(): self
+    {
+        $testFunction = $this->object->getKeys();
+        $this->assertNotNull($testFunction);
+        $this->assertIsArray($testFunction);
         return $this;
     }
 

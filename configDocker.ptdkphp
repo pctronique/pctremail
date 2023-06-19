@@ -50,7 +50,7 @@ docs_containerFileAdd:/usr/local/bin/phpdoc
 docs_folders:core/class/
 docs_containerCmdUp:
 docs_containerCmd:#exec# #fileAdd# run --ansi --directory #srcFolder# --target #docsFolder# --cache-folder #tmpFolder# --title #title# --visibility public,protected
-docs_containerCmdDown:
+docs_containerCmdDown: chmod 777 -R #docsFolder#
 #
 # Project (Docs)
 #
