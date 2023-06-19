@@ -16,6 +16,7 @@ if (!class_exists('MessageEmail')) {
         private string|null $message;
         private array|null $arrContent;
         private array|null $vars;
+        private array|null $keys;
         private bool $isFileIni;
         private bool $isFileJson;
         
@@ -29,6 +30,7 @@ if (!class_exists('MessageEmail')) {
          */
         public function __construct(string|null $file_message = null) {
             // initialisation des variables
+            $this->keys = [];
             $this->selectVar = "{{%s}}";
             $this->object = "";
             $this->message = "";
@@ -64,6 +66,8 @@ if (!class_exists('MessageEmail')) {
                         // si c'est aucun des deux fichiers
                         if(!($this->isFileIni || $this->isFileJson)) {
                             throw new Error("Il n'est pas possible de lire le fichier (".(!empty($file_message) ? $file_message : (isset($file_message) ? $file_message : "NULL")).").", 63736000002);
+                        } else {
+                            $this->keys = array_keys($this->arrContent);
                         }
                     } else {
                         throw new Error("Il n'est pas possible d'ouvrir le fichier (".(!empty($file_message) ? $file_message : (isset($file_message) ? $file_message : "NULL")).").", 63736000001);
@@ -110,20 +114,20 @@ if (!class_exists('MessageEmail')) {
         }
 
         /**
-         * récupérer un message et l'objet dans le fichier ini ou json
+         * récupérer un message et l'objet dans le fichier ini ou json à partir d'un nom de clé
          * 
-         * @param string|null $title titre du message
+         * @param string|null $key nom clé du message
          * @return self
          */
-        public function recupeMessage(string|null $title):self {
+        public function recupeMessage(string|null $key):self {
             $this->object = "";
             $this->message = "";
             // vérifier qu'on a bien ouvert un fichier valide
-            if(($this->isFileIni || $this->isFileJson) && !empty($this->arrContent) && array_key_exists($title, $this->arrContent)) {
+            if(($this->isFileIni || $this->isFileJson) && !empty($this->arrContent) && array_key_exists($key, $this->arrContent)) {
                 // récupérer le message
-                if(array_key_exists("object", $this->arrContent[$title]) && array_key_exists("message", $this->arrContent[$title])) {
-                    $this->object = $this->modifText($this->arrContent[$title]["object"]);
-                    $this->message = $this->modifText($this->arrContent[$title]["message"]);
+                if(array_key_exists("object", $this->arrContent[$key]) && array_key_exists("message", $this->arrContent[$key])) {
+                    $this->object = $this->modifText($this->arrContent[$key]["object"]);
+                    $this->message = $this->modifText($this->arrContent[$key]["message"]);
                 }
             }
             return $this;
@@ -211,6 +215,16 @@ if (!class_exists('MessageEmail')) {
             }
             // afficher le texte sans les variables
             return $this->modifText($message);
+        }
+
+        /**
+         * Récupère les clés du fichier.
+         * 
+         * @return array|null les clés du fichier.
+         */
+        public function getKeys(): array|null
+        {
+            return $this->keys;
         }
 
     }
