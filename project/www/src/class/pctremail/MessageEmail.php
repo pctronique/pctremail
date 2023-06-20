@@ -7,7 +7,7 @@ if (!class_exists('MessageEmail')) {
      * (Numéro d'error de la classe '63736XXXXXX')
      * 
      * @version 1.1.1.0
-     * @author NAULOT ludovic <dev@pctronique.fr>
+     * @author NAULOT ludovic
      */
     class MessageEmail {
         

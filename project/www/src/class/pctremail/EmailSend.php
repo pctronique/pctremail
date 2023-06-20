@@ -7,7 +7,7 @@ if (!class_exists('EmailSend')) {
      * (Numéro d'error de la classe '36245XXXXXX')
      * 
      * @version 1.1.1.0
-     * @author NAULOT ludovic <dev@pctronique.fr>
+     * @author NAULOT ludovic
      */
     class EmailSend {
 
