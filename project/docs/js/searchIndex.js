@@ -11,6 +11,16 @@ Search.appendIndex(
             "summary": "le\u0020constructeur\u0020par\u0020d\u00E9faut.",
             "url": "classes/EmailSend.html#method___construct"
         },                {
+            "fqsen": "\\EmailSend\u003A\u003AsetSelectVar\u0028\u0029",
+            "name": "setSelectVar",
+            "summary": "Pour\u0020pouvoir\u0020s\u00E9lectionner\u0020une\u0020variable\u0020dans\u0020le\u0020message\u0020et\u0020doit\u0020contenir\u0020\u0025s.",
+            "url": "classes/EmailSend.html#method_setSelectVar"
+        },                {
+            "fqsen": "\\EmailSend\u003A\u003AaddVar\u0028\u0029",
+            "name": "addVar",
+            "summary": "Ajouter\u0020une\u0020variable,\u0020pour\u0020le\u0020remplacer\u0020dans\u0020le\u0020message",
+            "url": "classes/EmailSend.html#method_addVar"
+        },                {
             "fqsen": "\\EmailSend\u003A\u003AsetMailTo\u0028\u0029",
             "name": "setMailTo",
             "summary": "Entrer\u0020le\u0020destinataire.",

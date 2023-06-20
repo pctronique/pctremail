@@ -2,6 +2,8 @@
 // verifier qu'on n'a pas deja creer la classe
 if (!class_exists('EmailSend')) {
 
+    require __DIR__ ."/MessageEmail.php";
+
     /**
      * Pour envoyer des e-mail.
      * (Numéro d'error de la classe '36245XXXXXX')
@@ -20,6 +22,7 @@ if (!class_exists('EmailSend')) {
         private string|null $messageHTML;
         private string|null $messageText;
         private array|null $attachments;
+        private MessageEmail|null $messageEmail;
 
         /**
          * le constructeur par défaut.
@@ -32,6 +35,33 @@ if (!class_exists('EmailSend')) {
             $this->messageHTML = "";
             $this->messageText = "";
             $this->attachments = [];
+            $this->messageEmail = new MessageEmail();
+        }
+
+        /**
+         * Pour pouvoir sélectionner une variable dans le message et doit contenir %s.
+         * exemple : {{%s}}
+         * 
+         * @param string|null $selectVar la sélection de variable doit contenir %s.
+         * @return self
+         * @throws Error si le nom ne contient pas %s
+         */
+        public function setSelectVar(string|null $selectVar): self
+        {
+            $this->messageEmail->setSelectVar($selectVar);
+            return $this;
+        }
+
+        /**
+         * Ajouter une variable, pour le remplacer dans le message
+         * 
+         * @param string|null $name le nom de la variable
+         * @param string|null $value entrer une valeur à la variable
+         * @return self
+         */
+        public function addVar(string|null $name, string|null $value):self {
+            $this->messageEmail->addVar($name, $value);
+            return $this;
         }
 
         /**
@@ -227,6 +257,10 @@ if (!class_exists('EmailSend')) {
             if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $this->mail_to)) { 
                 $passage_ligne = "\r\n";
             }
+            // modifier les variables.
+            $this->objet = $this->messageEmail->message($this->objet);
+            $this->messageHTML = $this->messageEmail->message($this->messageHTML);
+            $this->messageText = $this->messageEmail->message($this->messageText);
             // créer et récupérer les messages html et texte brut
             if(empty($this->messageText) && !empty($this->messageHTML)) {
                 $this->messageText = strip_tags(str_replace("<br />", "\n", $this->messageHTML));
