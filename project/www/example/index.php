@@ -26,7 +26,11 @@ if (!empty($_POST)) {
         $emailSend1->setMailTo($_POST['email-dest'], $_POST['name-dest']);
         $emailSend1->setMailFrom($_POST['email-expe'], $_POST['name-expe']);
         $emailSend1->setObjet($_POST['objet']);
-        $emailSend1->setMessageText($_POST['message']);
+        if(strtolower($_POST['type']) == "html") {
+            $emailSend1->setMessageHTML($_POST['message']);
+        } else {
+            $emailSend1->setMessageText($_POST['message']);
+        }
         if(!empty($_FILES) && array_key_exists('file', $_FILES) && !empty($_FILES['file']['name'])) {
             foreach ($_FILES["file"]["name"] as $key => $name) {
                 if(!empty($_FILES['file']['name'][$key])) {
@@ -82,6 +86,9 @@ if(!empty($_GET) && array_key_exists("id_error", $_GET)) {
             <label for="name-expe" class="name">nom</label><input type="text" name="name-expe" class="name-txt" id="name-expe">
             <h3>Pièces jointes</h3>
             <input type="File" name="file[]" id="file" accept="image/png, image/jpeg" multiple />
+            <h3>Type</h3>
+            <input type="radio" name="type" value="txt" id="type-txt" checked><label for="type-txt">Texte</label>
+            <input type="radio" name="type" value="html" id="type-html"><label for="type-html">HTML</label>
             <h3>Contenu enregistré</h3>
             <input type="radio" name="text" id="text-non" checked><label for="text-non">Non</label>
             <input type="radio" name="text" id="text-ini"><label for="text-ini">Fichier ini</label><select name="contenu-ini" id="contenu-ini">
