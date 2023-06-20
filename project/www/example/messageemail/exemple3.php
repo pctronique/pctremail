@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . "/../../src/class/pctremail/MessageEmail.php";
 
-$msgEmail = new MessageEmail(__DIR__."/messages.json");
+$msgEmail = new MessageEmail("./messages.json");
 
 $msgEmail->addVar("NAME", "Pctremail")
         ->addVar("USER", "pctronique");
