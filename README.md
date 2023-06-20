@@ -6,6 +6,8 @@ Pour envoyer facilement des e-mails et de la possibilité pour avoir des fichier
 
 Pas besoin de base de données, pas de configuration pour l'utiliser.
 
+Création de la doc des classes avec phpDocumentor, test unitaire fait et validé avec phpunit, pour la validation des classes (pour supprimer un maximum de bug).
+
 Docs : https://pctronique.github.io/pctremail/project/docs/
 
 Le dossier du projet : /project/www/ (https://github.com/pctronique/pctremail/tree/main/project/www)
