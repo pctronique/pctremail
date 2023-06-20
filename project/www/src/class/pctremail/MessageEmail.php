@@ -201,7 +201,7 @@ if (!class_exists('MessageEmail')) {
             // vérifier si c'est un fichier
             if(!empty($message) && is_file($message)) {
                 // vérifier que c'est bien un fichier texte
-                if(($mime = mime_content_type($message))!==false && strtolower($mime) == "text/plain") {
+                if(($mime = mime_content_type($message))!==false && (strtolower($mime) == "text/plain" || strtolower($mime) == "text/html")) {
                     // récuper le contenu
                     if(($content = file_get_contents($message))!==false) {
                         $message = $content;

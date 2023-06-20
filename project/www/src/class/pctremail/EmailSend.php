@@ -133,7 +133,7 @@ if (!class_exists('EmailSend')) {
             // vérifier qu'on a entré un fichier
             if (file_exists($message)) {
                 // vérifier que c'est bien un fichier texte
-                if(($mime = mime_content_type($message))!==false && strtolower($mime) == "text/plain") {
+                if(($mime = mime_content_type($message))!==false && (strtolower($mime) == "text/plain" || strtolower($mime) == "text/html")) {
                     // récupérer le contenu
                     if(($content = file_get_contents($message))!==false) {
                         return !empty($content) ? $content : "";
