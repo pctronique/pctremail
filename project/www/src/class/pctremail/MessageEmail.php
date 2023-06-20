@@ -43,7 +43,7 @@ if (!class_exists('MessageEmail')) {
                 // vérifier le contenu du fichier qu'il soit valide
                 if(($mime = mime_content_type($file_message))!==false && (strtolower($mime) == "text/plain" || strtolower($mime) == "application/json")) {
                     // récupérer le contenu du fichier
-                    if(($content = file_get_contents($file_message))!==false) {
+                    if(($content = file_get_contents($file_message))!==false && !empty($content)) {
                         // vérifier que le fichier est json
                         if(strtolower($mime) == "application/json") {
                             try {
