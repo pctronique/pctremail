@@ -1,0 +1,5 @@
+Bonjour {{NAME}},<br />
+<br />
+C'est un message de test.<br />
+<br />
+{{NAME}}
