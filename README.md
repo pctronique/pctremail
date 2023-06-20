@@ -2,13 +2,17 @@
 
 Merci de visiter le wiki.
 
+Pour envoyer facilement des e-mails et de la possibilité pour avoir des fichiers contenant tous vos messages à envoyer.
+
+Pas besoin de base de données, pas de configuration pour l'utiliser.
+
 Docs : https://pctronique.github.io/pctremail/project/docs/
 
-Class dans /project/www/src/class/pctremail/
+Le dossier du projet : /project/www/ (https://github.com/pctronique/pctremail/tree/main/project/www)
 
-Exemple : /project/www/example/
+Class dans : /project/www/src/class/pctremail/ (https://github.com/pctronique/pctremail/tree/main/project/www/src/class/pctremail)
 
-Le dossier du projet : /project/www/
+Exemple : /project/www/example/ (https://github.com/pctronique/pctremail/tree/main/project/www/example)
 
 En-dehors du dossier projet, c'est du contenu pour docker (pas utile si vous n'utilisez pas docker).
 
