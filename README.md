@@ -1,6 +1,6 @@
 # pctremail
 
-Merci de visiter le wiki.
+Merci de visiter le wiki (https://github.com/pctronique/pctremail/wiki).
 
 Pour envoyer facilement des e-mails et de la possibilité pour avoir des fichiers contenant tous vos messages à envoyer.
 
