@@ -39,16 +39,16 @@ if (!class_exists('EmailSend')) {
         }
 
         /**
-         * Pour pouvoir sélectionner une variable dans le message et doit contenir %s.
+         * Pour pouvoir modifier le format d'une variable dans le message et doit contenir %s.
          * exemple : {{%s}}
          * 
-         * @param string|null $selectVar la sélection de variable doit contenir %s.
+         * @param string|null $selectVar le format d'une variable doit contenir %s.
          * @return self
          * @throws Error si le nom ne contient pas %s
          */
-        public function setSelectVar(string|null $selectVar): self
+        public function setFormatVar(string|null $selectVar): self
         {
-            $this->messageEmail->setSelectVar($selectVar);
+            $this->messageEmail->setFormatVar($selectVar);
             return $this;
         }
 

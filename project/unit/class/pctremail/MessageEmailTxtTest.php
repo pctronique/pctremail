@@ -110,13 +110,13 @@ class MessageEmailTest extends TestCase
         return $this;
     }
 
-    public function testSetSelectVar(): self
+    public function testsetFormatVar(): self
     {
         $tabError = [];
         $tabVal = [];
         foreach (array_string_all() as $value) {
             try {
-                $this->object->setSelectVar($value);
+                $this->object->setFormatVar($value);
                 $this->testGetMessage();
                 $this->testGetObject();
                 $this->testGetKeys();
@@ -125,8 +125,8 @@ class MessageEmailTest extends TestCase
                 array_push($tabError, 'Problème : ' . $th->getMessage());
             }
         }
-        $this->displayValidated($tabVal, "setSelectVar", true);
-        $this->displayError($tabError, "setSelectVar");
+        $this->displayValidated($tabVal, "setFormatVar", true);
+        $this->displayError($tabError, "setFormatVar");
         $this->assertNotNull($this->object);
         return $this;
     }

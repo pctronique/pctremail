@@ -4,7 +4,7 @@ require __DIR__."/../../src/class/pctremail/EmailSend.php";
 
 $emailSend = new EmailSend();
 
-$emailSend->setSelectVar("[#%s#]");
+$emailSend->setFormatVar("[#%s#]");
 $emailSend->addVar("NAME", "Pctremail")
         ->addVar("USER", "pctronique");
 

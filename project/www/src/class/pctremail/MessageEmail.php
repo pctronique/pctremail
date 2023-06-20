@@ -80,14 +80,14 @@ if (!class_exists('MessageEmail')) {
         }
 
         /**
-         * Pour pouvoir sélectionner une variable dans le message et doit contenir %s.
+         * Pour pouvoir modifier le format d'une variable dans le message et doit contenir %s.
          * exemple : {{%s}}
          * 
-         * @param string|null $selectVar la sélection de variable doit contenir %s.
+         * @param string|null $selectVar le format d'une variable doit contenir %s.
          * @return self
          * @throws Error si le nom ne contient pas %s
          */
-        public function setSelectVar(string|null $selectVar): self
+        public function setFormatVar(string|null $selectVar): self
         {
             if (!str_contains($selectVar, '%s')) {
                 throw new Error("Le contenu de la sélection de variable n'est pas valide, il manque %s (".$selectVar.")", 63736000003);
