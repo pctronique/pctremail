@@ -45,6 +45,15 @@ sub =
 type = http
 lien = http://localhost:${VALUE_HTTPD_PORT}
 
+[config_bt_data]
+tr_key = bt_data
+tr_text = Go to data
+tr_com =
+is_container = true
+sub =
+type = http
+lien = http://localhost:${VALUE_HTTPD_PORT}/data_tmp
+
 [config_bt_mailhog]
 tr_key = bt_mailhog
 tr_text = Open mailhog
@@ -97,7 +106,7 @@ tr_com =
 is_container = false
 sub = 
 type = folder
-lien = project/www/data
+lien = projecttmp/data
 
 [config_bt_port_httpd]
 tr_key = expose_httpd
