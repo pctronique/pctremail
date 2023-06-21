@@ -258,7 +258,7 @@ if (!class_exists('EmailSend')) {
                 $passage_ligne = "\r\n";
             }
             // modifier les variables.
-            $this->objet = $this->messageEmail->message($this->objet);
+            $this->objet = $this->messageEmail->object($this->objet);
             $this->messageHTML = $this->messageEmail->message($this->messageHTML);
             $this->messageText = $this->messageEmail->message($this->messageText);
             // créer et récupérer les messages html et texte brut
