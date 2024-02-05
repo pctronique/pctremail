@@ -6,6 +6,10 @@
 /test/
 /.vscode
 /.env
+/vendor/
+/composer.lock
+/project/www/vendor/
+/project/www/composer.lock
 /projecttmp/
 /project/www/errors.log
 /project/www/.htaccess
