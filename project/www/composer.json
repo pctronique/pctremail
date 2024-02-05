@@ -1,0 +1,24 @@
+{
+    "name": "vendor/pctremail",
+    "description": "Pour envoyer facilement des e-mails et la possibilité d'introduire des fichiers dans vos messages a envoyé.",
+    "type": "library",
+    "version": "1.0.0",
+    "require": {
+        "php": ">=8.3.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Pctremail\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "pctronique (naulot ludovic)"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "vendor-dir": "composer_vendor"
+    }
+}
