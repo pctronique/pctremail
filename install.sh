@@ -28,4 +28,4 @@ else
 fi
 
 # creation du docker du projet
-docker-compose up -d
+docker compose up -d

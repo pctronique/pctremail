@@ -1,0 +1,254 @@
+------------------------------
+
+-- VALIDATED : MessageEmail
+------------------------------
+Valeur valide : 
+Valeur valide : tintin
+Valeur valide : ####
+Valeur valide : ////
+Valeur valide : /opt/titi
+Valeur valide : Pc*#014HgIl*#78
+Valeur valide : 0125
+Valeur valide : 01.25
+Valeur valide : 01,25
+Valeur valide : A15F
+Valeur valide : 0
+Valeur valide : 1
+Valeur valide : 2
+Valeur valide : /usr/local/projecttmp/tmp/php
+Valeur valide : /
+Valeur valide : /opt/tmp
+Valeur valide : message_1
+Valeur valide : [%s]
+Valeur valide : cd /
+Valeur valide : ls
+Valeur valide : export Home=tintin
+Valeur valide : cd /usr/local/apache2/www
+Valeur valide : export Home=/usr/local/apache2/www
+Valeur valide : cd 
+Valeur valide : cd Home
+Valeur valide : cd $Home
+Valeur valide : cd /usr/local/******/htdocs
+Valeur valide : cd /usr/local/apa.che2/ht.docs/tmp
+Valeur valide : cd /opt/tmp
+Valeur valide : /usr/local/src/
+Valeur valide : /usr/local/apache2/www2/
+Valeur valide : /usr/local/projecttmp/tmp/php/test1
+Valeur valide : /usr/local////apache2/www/tmp/test1
+Valeur valide : ./tmp/test1
+Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../
+Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/
+Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../..
+Valeur valide : linux
+Valeur valide : /usr/local/apache2/unit/../www/example/test.html
+Valeur valide : /usr/local/apache2/unit/../www/example/message.ini
+Valeur valide : /usr/local/apache2/unit/../www/example/messages.json
+Valeur valide : test@test.fr
+Valeur valide : test1@test.fr
+Valeur valide : BASE64
+Valeur valide : UUENCODE
+Valeur valide : HTML-ENTITIES
+Valeur valide : Quoted-Printable
+Valeur valide : 7bit
+Valeur valide : 8bit
+Valeur valide : UCS-4
+Valeur valide : UCS-4BE
+Valeur valide : UCS-4LE
+Valeur valide : UCS-2
+Valeur valide : UCS-2BE
+Valeur valide : UCS-2LE
+Valeur valide : UTF-32
+Valeur valide : UTF-32BE
+Valeur valide : UTF-32LE
+Valeur valide : UTF-16
+Valeur valide : UTF-16BE
+Valeur valide : UTF-16LE
+Valeur valide : UTF-8
+Valeur valide : UTF-7
+Valeur valide : UTF7-IMAP
+Valeur valide : ASCII
+Valeur valide : EUC-JP
+Valeur valide : SJIS
+Valeur valide : eucJP-win
+Valeur valide : EUC-JP-2004
+Valeur valide : SJIS-Mobile#DOCOMO
+Valeur valide : SJIS-Mobile#KDDI
+Valeur valide : SJIS-Mobile#SOFTBANK
+Valeur valide : SJIS-mac
+Valeur valide : SJIS-2004
+Valeur valide : UTF-8-Mobile#DOCOMO
+Valeur valide : UTF-8-Mobile#KDDI-A
+Valeur valide : UTF-8-Mobile#KDDI-B
+Valeur valide : UTF-8-Mobile#SOFTBANK
+Valeur valide : CP932
+Valeur valide : SJIS-win
+Valeur valide : CP51932
+Valeur valide : JIS
+Valeur valide : ISO-2022-JP
+Valeur valide : ISO-2022-JP-MS
+Valeur valide : GB18030
+Valeur valide : Windows-1252
+Valeur valide : Windows-1254
+Valeur valide : ISO-8859-1
+Valeur valide : ISO-8859-2
+Valeur valide : ISO-8859-3
+Valeur valide : ISO-8859-4
+Valeur valide : ISO-8859-5
+Valeur valide : ISO-8859-6
+Valeur valide : ISO-8859-7
+Valeur valide : ISO-8859-8
+Valeur valide : ISO-8859-9
+Valeur valide : ISO-8859-10
+Valeur valide : ISO-8859-13
+Valeur valide : ISO-8859-14
+Valeur valide : ISO-8859-15
+Valeur valide : ISO-8859-16
+Valeur valide : EUC-CN
+Valeur valide : CP936
+Valeur valide : HZ
+Valeur valide : EUC-TW
+Valeur valide : BIG-5
+Valeur valide : CP950
+Valeur valide : EUC-KR
+Valeur valide : UHC
+Valeur valide : ISO-2022-KR
+Valeur valide : Windows-1251
+Valeur valide : CP866
+Valeur valide : KOI8-R
+Valeur valide : KOI8-U
+Valeur valide : ArmSCII-8
+Valeur valide : CP850
+Valeur valide : ISO-2022-JP-2004
+Valeur valide : ISO-2022-JP-MOBILE#KDDI
+Valeur valide : CP50220
+Valeur valide : CP50221
+Valeur valide : CP50222
+------------------------------
+
+-- VALIDATED : setFormatVar
+------------------------------
+Valeur valide : [%s]
+------------------------------
+
+-- VALIDATED : Message
+------------------------------
+Valeur valide : 
+Valeur valide : tintin
+Valeur valide : ####
+Valeur valide : ////
+Valeur valide : /opt/titi
+Valeur valide : Pc*#014HgIl*#78
+Valeur valide : 0125
+Valeur valide : 01.25
+Valeur valide : 01,25
+Valeur valide : A15F
+Valeur valide : 0
+Valeur valide : 1
+Valeur valide : 2
+Valeur valide : /usr/local/projecttmp/tmp/php
+Valeur valide : /
+Valeur valide : /opt/tmp
+Valeur valide : message_1
+Valeur valide : [%s]
+Valeur valide : cd /
+Valeur valide : ls
+Valeur valide : export Home=tintin
+Valeur valide : cd /usr/local/apache2/www
+Valeur valide : export Home=/usr/local/apache2/www
+Valeur valide : cd 
+Valeur valide : cd Home
+Valeur valide : cd $Home
+Valeur valide : cd /usr/local/******/htdocs
+Valeur valide : cd /usr/local/apa.che2/ht.docs/tmp
+Valeur valide : cd /opt/tmp
+Valeur valide : /usr/local/src/
+Valeur valide : /usr/local/apache2/www2/
+Valeur valide : /usr/local/projecttmp/tmp/php/test1
+Valeur valide : /usr/local////apache2/www/tmp/test1
+Valeur valide : ./tmp/test1
+Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../
+Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/
+Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../..
+Valeur valide : linux
+Valeur valide : /usr/local/apache2/unit/../www/example/test.html
+Valeur valide : /usr/local/apache2/unit/../www/example/message.ini
+Valeur valide : test@test.fr
+Valeur valide : test1@test.fr
+Valeur valide : BASE64
+Valeur valide : UUENCODE
+Valeur valide : HTML-ENTITIES
+Valeur valide : Quoted-Printable
+Valeur valide : 7bit
+Valeur valide : 8bit
+Valeur valide : UCS-4
+Valeur valide : UCS-4BE
+Valeur valide : UCS-4LE
+Valeur valide : UCS-2
+Valeur valide : UCS-2BE
+Valeur valide : UCS-2LE
+Valeur valide : UTF-32
+Valeur valide : UTF-32BE
+Valeur valide : UTF-32LE
+Valeur valide : UTF-16
+Valeur valide : UTF-16BE
+Valeur valide : UTF-16LE
+Valeur valide : UTF-8
+Valeur valide : UTF-7
+Valeur valide : UTF7-IMAP
+Valeur valide : ASCII
+Valeur valide : EUC-JP
+Valeur valide : SJIS
+Valeur valide : eucJP-win
+Valeur valide : EUC-JP-2004
+Valeur valide : SJIS-Mobile#DOCOMO
+Valeur valide : SJIS-Mobile#KDDI
+Valeur valide : SJIS-Mobile#SOFTBANK
+Valeur valide : SJIS-mac
+Valeur valide : SJIS-2004
+Valeur valide : UTF-8-Mobile#DOCOMO
+Valeur valide : UTF-8-Mobile#KDDI-A
+Valeur valide : UTF-8-Mobile#KDDI-B
+Valeur valide : UTF-8-Mobile#SOFTBANK
+Valeur valide : CP932
+Valeur valide : SJIS-win
+Valeur valide : CP51932
+Valeur valide : JIS
+Valeur valide : ISO-2022-JP
+Valeur valide : ISO-2022-JP-MS
+Valeur valide : GB18030
+Valeur valide : Windows-1252
+Valeur valide : Windows-1254
+Valeur valide : ISO-8859-1
+Valeur valide : ISO-8859-2
+Valeur valide : ISO-8859-3
+Valeur valide : ISO-8859-4
+Valeur valide : ISO-8859-5
+Valeur valide : ISO-8859-6
+Valeur valide : ISO-8859-7
+Valeur valide : ISO-8859-8
+Valeur valide : ISO-8859-9
+Valeur valide : ISO-8859-10
+Valeur valide : ISO-8859-13
+Valeur valide : ISO-8859-14
+Valeur valide : ISO-8859-15
+Valeur valide : ISO-8859-16
+Valeur valide : EUC-CN
+Valeur valide : CP936
+Valeur valide : HZ
+Valeur valide : EUC-TW
+Valeur valide : BIG-5
+Valeur valide : CP950
+Valeur valide : EUC-KR
+Valeur valide : UHC
+Valeur valide : ISO-2022-KR
+Valeur valide : Windows-1251
+Valeur valide : CP866
+Valeur valide : KOI8-R
+Valeur valide : KOI8-U
+Valeur valide : ArmSCII-8
+Valeur valide : CP850
+Valeur valide : ISO-2022-JP-2004
+Valeur valide : ISO-2022-JP-MOBILE#KDDI
+Valeur valide : CP50220
+Valeur valide : CP50221
+Valeur valide : CP50222

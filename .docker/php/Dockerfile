@@ -1,4 +1,4 @@
-FROM php:8.2-fpm
+FROM php:8.3.2-fpm
 
 #RUN pear install PhpDocumentor-1.4.4 \
 #                 XML_Beautifier \

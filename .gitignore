@@ -1,5 +1,11 @@
-/.env
 /nbproject/private/
+/build/
+/dist/
+/lang/
+/bin/
+/test/
+/.vscode
+/.env
 /projecttmp/
 /project/www/errors.log
 /project/www/.htaccess

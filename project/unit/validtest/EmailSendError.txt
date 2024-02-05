@@ -1,0 +1,445 @@
+------------------------------
+
+-- ERROR : setMailTo
+------------------------------
+Problème : L'adresse email (NULL) n'est pas valide.
+Problème : L'adresse email (tintin) n'est pas valide.
+Problème : L'adresse email (####) n'est pas valide.
+Problème : L'adresse email (////) n'est pas valide.
+Problème : L'adresse email (/opt/titi) n'est pas valide.
+Problème : L'adresse email (Pc*#014HgIl*#78) n'est pas valide.
+Problème : L'adresse email (0125) n'est pas valide.
+Problème : L'adresse email (01.25) n'est pas valide.
+Problème : L'adresse email (01,25) n'est pas valide.
+Problème : L'adresse email (A15F) n'est pas valide.
+Problème : L'adresse email (0) n'est pas valide.
+Problème : L'adresse email (1) n'est pas valide.
+Problème : L'adresse email (2) n'est pas valide.
+Problème : L'adresse email (/usr/local/projecttmp/tmp/php) n'est pas valide.
+Problème : L'adresse email (/) n'est pas valide.
+Problème : L'adresse email (/opt/tmp) n'est pas valide.
+Problème : L'adresse email (message_1) n'est pas valide.
+Problème : L'adresse email ([%s]) n'est pas valide.
+Problème : L'adresse email (cd /) n'est pas valide.
+Problème : L'adresse email (ls) n'est pas valide.
+Problème : L'adresse email (export Home=tintin) n'est pas valide.
+Problème : L'adresse email (cd /usr/local/apache2/www) n'est pas valide.
+Problème : L'adresse email (export Home=/usr/local/apache2/www) n'est pas valide.
+Problème : L'adresse email (cd ) n'est pas valide.
+Problème : L'adresse email (cd Home) n'est pas valide.
+Problème : L'adresse email (cd $Home) n'est pas valide.
+Problème : L'adresse email (cd /usr/local/******/htdocs) n'est pas valide.
+Problème : L'adresse email (cd /usr/local/apa.che2/ht.docs/tmp) n'est pas valide.
+Problème : L'adresse email (cd /opt/tmp) n'est pas valide.
+Problème : L'adresse email (/usr/local/src/) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/www2/) n'est pas valide.
+Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1) n'est pas valide.
+Problème : L'adresse email (/usr/local////apache2/www/tmp/test1) n'est pas valide.
+Problème : L'adresse email (./tmp/test1) n'est pas valide.
+Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1/../../../) n'est pas valide.
+Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/) n'est pas valide.
+Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1/../../..) n'est pas valide.
+Problème : L'adresse email (linux) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www/favicon.ico) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www/example/test.html) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www/example/message.ini) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www/example/messages.json) n'est pas valide.
+Problème : L'adresse email (BASE64) n'est pas valide.
+Problème : L'adresse email (UUENCODE) n'est pas valide.
+Problème : L'adresse email (HTML-ENTITIES) n'est pas valide.
+Problème : L'adresse email (Quoted-Printable) n'est pas valide.
+Problème : L'adresse email (7bit) n'est pas valide.
+Problème : L'adresse email (8bit) n'est pas valide.
+Problème : L'adresse email (UCS-4) n'est pas valide.
+Problème : L'adresse email (UCS-4BE) n'est pas valide.
+Problème : L'adresse email (UCS-4LE) n'est pas valide.
+Problème : L'adresse email (UCS-2) n'est pas valide.
+Problème : L'adresse email (UCS-2BE) n'est pas valide.
+Problème : L'adresse email (UCS-2LE) n'est pas valide.
+Problème : L'adresse email (UTF-32) n'est pas valide.
+Problème : L'adresse email (UTF-32BE) n'est pas valide.
+Problème : L'adresse email (UTF-32LE) n'est pas valide.
+Problème : L'adresse email (UTF-16) n'est pas valide.
+Problème : L'adresse email (UTF-16BE) n'est pas valide.
+Problème : L'adresse email (UTF-16LE) n'est pas valide.
+Problème : L'adresse email (UTF-8) n'est pas valide.
+Problème : L'adresse email (UTF-7) n'est pas valide.
+Problème : L'adresse email (UTF7-IMAP) n'est pas valide.
+Problème : L'adresse email (ASCII) n'est pas valide.
+Problème : L'adresse email (EUC-JP) n'est pas valide.
+Problème : L'adresse email (SJIS) n'est pas valide.
+Problème : L'adresse email (eucJP-win) n'est pas valide.
+Problème : L'adresse email (EUC-JP-2004) n'est pas valide.
+Problème : L'adresse email (SJIS-Mobile#DOCOMO) n'est pas valide.
+Problème : L'adresse email (SJIS-Mobile#KDDI) n'est pas valide.
+Problème : L'adresse email (SJIS-Mobile#SOFTBANK) n'est pas valide.
+Problème : L'adresse email (SJIS-mac) n'est pas valide.
+Problème : L'adresse email (SJIS-2004) n'est pas valide.
+Problème : L'adresse email (UTF-8-Mobile#DOCOMO) n'est pas valide.
+Problème : L'adresse email (UTF-8-Mobile#KDDI-A) n'est pas valide.
+Problème : L'adresse email (UTF-8-Mobile#KDDI-B) n'est pas valide.
+Problème : L'adresse email (UTF-8-Mobile#SOFTBANK) n'est pas valide.
+Problème : L'adresse email (CP932) n'est pas valide.
+Problème : L'adresse email (SJIS-win) n'est pas valide.
+Problème : L'adresse email (CP51932) n'est pas valide.
+Problème : L'adresse email (JIS) n'est pas valide.
+Problème : L'adresse email (ISO-2022-JP) n'est pas valide.
+Problème : L'adresse email (ISO-2022-JP-MS) n'est pas valide.
+Problème : L'adresse email (GB18030) n'est pas valide.
+Problème : L'adresse email (Windows-1252) n'est pas valide.
+Problème : L'adresse email (Windows-1254) n'est pas valide.
+Problème : L'adresse email (ISO-8859-1) n'est pas valide.
+Problème : L'adresse email (ISO-8859-2) n'est pas valide.
+Problème : L'adresse email (ISO-8859-3) n'est pas valide.
+Problème : L'adresse email (ISO-8859-4) n'est pas valide.
+Problème : L'adresse email (ISO-8859-5) n'est pas valide.
+Problème : L'adresse email (ISO-8859-6) n'est pas valide.
+Problème : L'adresse email (ISO-8859-7) n'est pas valide.
+Problème : L'adresse email (ISO-8859-8) n'est pas valide.
+Problème : L'adresse email (ISO-8859-9) n'est pas valide.
+Problème : L'adresse email (ISO-8859-10) n'est pas valide.
+Problème : L'adresse email (ISO-8859-13) n'est pas valide.
+Problème : L'adresse email (ISO-8859-14) n'est pas valide.
+Problème : L'adresse email (ISO-8859-15) n'est pas valide.
+Problème : L'adresse email (ISO-8859-16) n'est pas valide.
+Problème : L'adresse email (EUC-CN) n'est pas valide.
+Problème : L'adresse email (CP936) n'est pas valide.
+Problème : L'adresse email (HZ) n'est pas valide.
+Problème : L'adresse email (EUC-TW) n'est pas valide.
+Problème : L'adresse email (BIG-5) n'est pas valide.
+Problème : L'adresse email (CP950) n'est pas valide.
+Problème : L'adresse email (EUC-KR) n'est pas valide.
+Problème : L'adresse email (UHC) n'est pas valide.
+Problème : L'adresse email (ISO-2022-KR) n'est pas valide.
+Problème : L'adresse email (Windows-1251) n'est pas valide.
+Problème : L'adresse email (CP866) n'est pas valide.
+Problème : L'adresse email (KOI8-R) n'est pas valide.
+Problème : L'adresse email (KOI8-U) n'est pas valide.
+Problème : L'adresse email (ArmSCII-8) n'est pas valide.
+Problème : L'adresse email (CP850) n'est pas valide.
+Problème : L'adresse email (ISO-2022-JP-2004) n'est pas valide.
+Problème : L'adresse email (ISO-2022-JP-MOBILE#KDDI) n'est pas valide.
+Problème : L'adresse email (CP50220) n'est pas valide.
+Problème : L'adresse email (CP50221) n'est pas valide.
+Problème : L'adresse email (CP50222) n'est pas valide.
+------------------------------
+
+-- ERROR : setMailFrom
+------------------------------
+Problème : L'adresse email (NULL) n'est pas valide.
+Problème : L'adresse email (tintin) n'est pas valide.
+Problème : L'adresse email (####) n'est pas valide.
+Problème : L'adresse email (////) n'est pas valide.
+Problème : L'adresse email (/opt/titi) n'est pas valide.
+Problème : L'adresse email (Pc*#014HgIl*#78) n'est pas valide.
+Problème : L'adresse email (0125) n'est pas valide.
+Problème : L'adresse email (01.25) n'est pas valide.
+Problème : L'adresse email (01,25) n'est pas valide.
+Problème : L'adresse email (A15F) n'est pas valide.
+Problème : L'adresse email (0) n'est pas valide.
+Problème : L'adresse email (1) n'est pas valide.
+Problème : L'adresse email (2) n'est pas valide.
+Problème : L'adresse email (/usr/local/projecttmp/tmp/php) n'est pas valide.
+Problème : L'adresse email (/) n'est pas valide.
+Problème : L'adresse email (/opt/tmp) n'est pas valide.
+Problème : L'adresse email (message_1) n'est pas valide.
+Problème : L'adresse email ([%s]) n'est pas valide.
+Problème : L'adresse email (cd /) n'est pas valide.
+Problème : L'adresse email (ls) n'est pas valide.
+Problème : L'adresse email (export Home=tintin) n'est pas valide.
+Problème : L'adresse email (cd /usr/local/apache2/www) n'est pas valide.
+Problème : L'adresse email (export Home=/usr/local/apache2/www) n'est pas valide.
+Problème : L'adresse email (cd ) n'est pas valide.
+Problème : L'adresse email (cd Home) n'est pas valide.
+Problème : L'adresse email (cd $Home) n'est pas valide.
+Problème : L'adresse email (cd /usr/local/******/htdocs) n'est pas valide.
+Problème : L'adresse email (cd /usr/local/apa.che2/ht.docs/tmp) n'est pas valide.
+Problème : L'adresse email (cd /opt/tmp) n'est pas valide.
+Problème : L'adresse email (/usr/local/src/) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/www2/) n'est pas valide.
+Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1) n'est pas valide.
+Problème : L'adresse email (/usr/local////apache2/www/tmp/test1) n'est pas valide.
+Problème : L'adresse email (./tmp/test1) n'est pas valide.
+Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1/../../../) n'est pas valide.
+Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/) n'est pas valide.
+Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1/../../..) n'est pas valide.
+Problème : L'adresse email (linux) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www/favicon.ico) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www/example/test.html) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www/example/message.ini) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www/example/messages.json) n'est pas valide.
+Problème : L'adresse email (BASE64) n'est pas valide.
+Problème : L'adresse email (UUENCODE) n'est pas valide.
+Problème : L'adresse email (HTML-ENTITIES) n'est pas valide.
+Problème : L'adresse email (Quoted-Printable) n'est pas valide.
+Problème : L'adresse email (7bit) n'est pas valide.
+Problème : L'adresse email (8bit) n'est pas valide.
+Problème : L'adresse email (UCS-4) n'est pas valide.
+Problème : L'adresse email (UCS-4BE) n'est pas valide.
+Problème : L'adresse email (UCS-4LE) n'est pas valide.
+Problème : L'adresse email (UCS-2) n'est pas valide.
+Problème : L'adresse email (UCS-2BE) n'est pas valide.
+Problème : L'adresse email (UCS-2LE) n'est pas valide.
+Problème : L'adresse email (UTF-32) n'est pas valide.
+Problème : L'adresse email (UTF-32BE) n'est pas valide.
+Problème : L'adresse email (UTF-32LE) n'est pas valide.
+Problème : L'adresse email (UTF-16) n'est pas valide.
+Problème : L'adresse email (UTF-16BE) n'est pas valide.
+Problème : L'adresse email (UTF-16LE) n'est pas valide.
+Problème : L'adresse email (UTF-8) n'est pas valide.
+Problème : L'adresse email (UTF-7) n'est pas valide.
+Problème : L'adresse email (UTF7-IMAP) n'est pas valide.
+Problème : L'adresse email (ASCII) n'est pas valide.
+Problème : L'adresse email (EUC-JP) n'est pas valide.
+Problème : L'adresse email (SJIS) n'est pas valide.
+Problème : L'adresse email (eucJP-win) n'est pas valide.
+Problème : L'adresse email (EUC-JP-2004) n'est pas valide.
+Problème : L'adresse email (SJIS-Mobile#DOCOMO) n'est pas valide.
+Problème : L'adresse email (SJIS-Mobile#KDDI) n'est pas valide.
+Problème : L'adresse email (SJIS-Mobile#SOFTBANK) n'est pas valide.
+Problème : L'adresse email (SJIS-mac) n'est pas valide.
+Problème : L'adresse email (SJIS-2004) n'est pas valide.
+Problème : L'adresse email (UTF-8-Mobile#DOCOMO) n'est pas valide.
+Problème : L'adresse email (UTF-8-Mobile#KDDI-A) n'est pas valide.
+Problème : L'adresse email (UTF-8-Mobile#KDDI-B) n'est pas valide.
+Problème : L'adresse email (UTF-8-Mobile#SOFTBANK) n'est pas valide.
+Problème : L'adresse email (CP932) n'est pas valide.
+Problème : L'adresse email (SJIS-win) n'est pas valide.
+Problème : L'adresse email (CP51932) n'est pas valide.
+Problème : L'adresse email (JIS) n'est pas valide.
+Problème : L'adresse email (ISO-2022-JP) n'est pas valide.
+Problème : L'adresse email (ISO-2022-JP-MS) n'est pas valide.
+Problème : L'adresse email (GB18030) n'est pas valide.
+Problème : L'adresse email (Windows-1252) n'est pas valide.
+Problème : L'adresse email (Windows-1254) n'est pas valide.
+Problème : L'adresse email (ISO-8859-1) n'est pas valide.
+Problème : L'adresse email (ISO-8859-2) n'est pas valide.
+Problème : L'adresse email (ISO-8859-3) n'est pas valide.
+Problème : L'adresse email (ISO-8859-4) n'est pas valide.
+Problème : L'adresse email (ISO-8859-5) n'est pas valide.
+Problème : L'adresse email (ISO-8859-6) n'est pas valide.
+Problème : L'adresse email (ISO-8859-7) n'est pas valide.
+Problème : L'adresse email (ISO-8859-8) n'est pas valide.
+Problème : L'adresse email (ISO-8859-9) n'est pas valide.
+Problème : L'adresse email (ISO-8859-10) n'est pas valide.
+Problème : L'adresse email (ISO-8859-13) n'est pas valide.
+Problème : L'adresse email (ISO-8859-14) n'est pas valide.
+Problème : L'adresse email (ISO-8859-15) n'est pas valide.
+Problème : L'adresse email (ISO-8859-16) n'est pas valide.
+Problème : L'adresse email (EUC-CN) n'est pas valide.
+Problème : L'adresse email (CP936) n'est pas valide.
+Problème : L'adresse email (HZ) n'est pas valide.
+Problème : L'adresse email (EUC-TW) n'est pas valide.
+Problème : L'adresse email (BIG-5) n'est pas valide.
+Problème : L'adresse email (CP950) n'est pas valide.
+Problème : L'adresse email (EUC-KR) n'est pas valide.
+Problème : L'adresse email (UHC) n'est pas valide.
+Problème : L'adresse email (ISO-2022-KR) n'est pas valide.
+Problème : L'adresse email (Windows-1251) n'est pas valide.
+Problème : L'adresse email (CP866) n'est pas valide.
+Problème : L'adresse email (KOI8-R) n'est pas valide.
+Problème : L'adresse email (KOI8-U) n'est pas valide.
+Problème : L'adresse email (ArmSCII-8) n'est pas valide.
+Problème : L'adresse email (CP850) n'est pas valide.
+Problème : L'adresse email (ISO-2022-JP-2004) n'est pas valide.
+Problème : L'adresse email (ISO-2022-JP-MOBILE#KDDI) n'est pas valide.
+Problème : L'adresse email (CP50220) n'est pas valide.
+Problème : L'adresse email (CP50221) n'est pas valide.
+Problème : L'adresse email (CP50222) n'est pas valide.
+------------------------------
+
+-- ERROR : setCharset
+------------------------------
+Problème : Le charset (tintin) n'est pas valide.
+Problème : Le charset (####) n'est pas valide.
+Problème : Le charset (////) n'est pas valide.
+Problème : Le charset (/opt/titi) n'est pas valide.
+Problème : Le charset (Pc*#014HgIl*#78) n'est pas valide.
+Problème : Le charset (0125) n'est pas valide.
+Problème : Le charset (01.25) n'est pas valide.
+Problème : Le charset (01,25) n'est pas valide.
+Problème : Le charset (A15F) n'est pas valide.
+Problème : Le charset (1) n'est pas valide.
+Problème : Le charset (2) n'est pas valide.
+Problème : Le charset (/usr/local/projecttmp/tmp/php) n'est pas valide.
+Problème : Le charset (/) n'est pas valide.
+Problème : Le charset (/opt/tmp) n'est pas valide.
+Problème : Le charset (message_1) n'est pas valide.
+Problème : Le charset ([%s]) n'est pas valide.
+Problème : Le charset (cd /) n'est pas valide.
+Problème : Le charset (ls) n'est pas valide.
+Problème : Le charset (export Home=tintin) n'est pas valide.
+Problème : Le charset (cd /usr/local/apache2/www) n'est pas valide.
+Problème : Le charset (export Home=/usr/local/apache2/www) n'est pas valide.
+Problème : Le charset (cd ) n'est pas valide.
+Problème : Le charset (cd Home) n'est pas valide.
+Problème : Le charset (cd $Home) n'est pas valide.
+Problème : Le charset (cd /usr/local/******/htdocs) n'est pas valide.
+Problème : Le charset (cd /usr/local/apa.che2/ht.docs/tmp) n'est pas valide.
+Problème : Le charset (cd /opt/tmp) n'est pas valide.
+Problème : Le charset (/usr/local/src/) n'est pas valide.
+Problème : Le charset (/usr/local/apache2/www2/) n'est pas valide.
+Problème : Le charset (/usr/local/projecttmp/tmp/php/test1) n'est pas valide.
+Problème : Le charset (/usr/local////apache2/www/tmp/test1) n'est pas valide.
+Problème : Le charset (./tmp/test1) n'est pas valide.
+Problème : Le charset (/usr/local/projecttmp/tmp/php/test1/../../../) n'est pas valide.
+Problème : Le charset (/usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/) n'est pas valide.
+Problème : Le charset (/usr/local/projecttmp/tmp/php/test1/../../..) n'est pas valide.
+Problème : Le charset (linux) n'est pas valide.
+Problème : Le charset (/usr/local/apache2/unit/../www/favicon.ico) n'est pas valide.
+Problème : Le charset (/usr/local/apache2/unit/../www/example/test.html) n'est pas valide.
+Problème : Le charset (/usr/local/apache2/unit/../www/example/message.ini) n'est pas valide.
+Problème : Le charset (/usr/local/apache2/unit/../www/example/messages.json) n'est pas valide.
+Problème : Le charset (test@test.fr) n'est pas valide.
+Problème : Le charset (test1@test.fr) n'est pas valide.
+------------------------------
+
+-- ERROR : setObjet
+------------------------------
+------------------------------
+
+-- ERROR : setMessageHTML
+------------------------------
+Problème : Le fichier n'est pas valide(////).
+Problème : Le fichier n'est pas valide(/usr/local/projecttmp/tmp/php).
+Problème : Le fichier n'est pas valide(/).
+Problème : Le fichier n'est pas valide(/usr/local/src/).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/favicon.ico).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/example/messages.json).
+------------------------------
+
+-- ERROR : setMessageText
+------------------------------
+Problème : Le fichier n'est pas valide(////).
+Problème : Le fichier n'est pas valide(/usr/local/projecttmp/tmp/php).
+Problème : Le fichier n'est pas valide(/).
+Problème : Le fichier n'est pas valide(/usr/local/src/).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/favicon.ico).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/example/messages.json).
+------------------------------
+
+-- ERROR : addAttachment
+------------------------------
+Problème : Le fichier (tintin) n'est pas valide.
+Problème : Le fichier (####) n'est pas valide.
+Problème : Le fichier (////) n'est pas valide.
+Problème : Le fichier (/opt/titi) n'est pas valide.
+Problème : Le fichier (Pc*#014HgIl*#78) n'est pas valide.
+Problème : Le fichier (0125) n'est pas valide.
+Problème : Le fichier (01.25) n'est pas valide.
+Problème : Le fichier (01,25) n'est pas valide.
+Problème : Le fichier (A15F) n'est pas valide.
+Problème : Le fichier (1) n'est pas valide.
+Problème : Le fichier (2) n'est pas valide.
+Problème : Le fichier (/usr/local/projecttmp/tmp/php) n'est pas valide.
+Problème : Le fichier (/) n'est pas valide.
+Problème : Le fichier (/opt/tmp) n'est pas valide.
+Problème : Le fichier (message_1) n'est pas valide.
+Problème : Le fichier ([%s]) n'est pas valide.
+Problème : Le fichier (cd /) n'est pas valide.
+Problème : Le fichier (ls) n'est pas valide.
+Problème : Le fichier (export Home=tintin) n'est pas valide.
+Problème : Le fichier (cd /usr/local/apache2/www) n'est pas valide.
+Problème : Le fichier (export Home=/usr/local/apache2/www) n'est pas valide.
+Problème : Le fichier (cd ) n'est pas valide.
+Problème : Le fichier (cd Home) n'est pas valide.
+Problème : Le fichier (cd $Home) n'est pas valide.
+Problème : Le fichier (cd /usr/local/******/htdocs) n'est pas valide.
+Problème : Le fichier (cd /usr/local/apa.che2/ht.docs/tmp) n'est pas valide.
+Problème : Le fichier (cd /opt/tmp) n'est pas valide.
+Problème : Le fichier (/usr/local/src/) n'est pas valide.
+Problème : Le fichier (/usr/local/apache2/www2/) n'est pas valide.
+Problème : Le fichier (/usr/local/projecttmp/tmp/php/test1) n'est pas valide.
+Problème : Le fichier (/usr/local////apache2/www/tmp/test1) n'est pas valide.
+Problème : Le fichier (./tmp/test1) n'est pas valide.
+Problème : Le fichier (/usr/local/projecttmp/tmp/php/test1/../../../) n'est pas valide.
+Problème : Le fichier (/usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/) n'est pas valide.
+Problème : Le fichier (/usr/local/projecttmp/tmp/php/test1/../../..) n'est pas valide.
+Problème : Le fichier (linux) n'est pas valide.
+Problème : Le fichier (/usr/local/apache2/unit/../www/example/test.html) n'est pas valide.
+Problème : Le fichier (/usr/local/apache2/unit/../www/example/message.ini) n'est pas valide.
+Problème : Le fichier (test@test.fr) n'est pas valide.
+Problème : Le fichier (test1@test.fr) n'est pas valide.
+Problème : Le fichier (BASE64) n'est pas valide.
+Problème : Le fichier (UUENCODE) n'est pas valide.
+Problème : Le fichier (HTML-ENTITIES) n'est pas valide.
+Problème : Le fichier (Quoted-Printable) n'est pas valide.
+Problème : Le fichier (7bit) n'est pas valide.
+Problème : Le fichier (8bit) n'est pas valide.
+Problème : Le fichier (UCS-4) n'est pas valide.
+Problème : Le fichier (UCS-4BE) n'est pas valide.
+Problème : Le fichier (UCS-4LE) n'est pas valide.
+Problème : Le fichier (UCS-2) n'est pas valide.
+Problème : Le fichier (UCS-2BE) n'est pas valide.
+Problème : Le fichier (UCS-2LE) n'est pas valide.
+Problème : Le fichier (UTF-32) n'est pas valide.
+Problème : Le fichier (UTF-32BE) n'est pas valide.
+Problème : Le fichier (UTF-32LE) n'est pas valide.
+Problème : Le fichier (UTF-16) n'est pas valide.
+Problème : Le fichier (UTF-16BE) n'est pas valide.
+Problème : Le fichier (UTF-16LE) n'est pas valide.
+Problème : Le fichier (UTF-8) n'est pas valide.
+Problème : Le fichier (UTF-7) n'est pas valide.
+Problème : Le fichier (UTF7-IMAP) n'est pas valide.
+Problème : Le fichier (ASCII) n'est pas valide.
+Problème : Le fichier (EUC-JP) n'est pas valide.
+Problème : Le fichier (SJIS) n'est pas valide.
+Problème : Le fichier (eucJP-win) n'est pas valide.
+Problème : Le fichier (EUC-JP-2004) n'est pas valide.
+Problème : Le fichier (SJIS-Mobile#DOCOMO) n'est pas valide.
+Problème : Le fichier (SJIS-Mobile#KDDI) n'est pas valide.
+Problème : Le fichier (SJIS-Mobile#SOFTBANK) n'est pas valide.
+Problème : Le fichier (SJIS-mac) n'est pas valide.
+Problème : Le fichier (SJIS-2004) n'est pas valide.
+Problème : Le fichier (UTF-8-Mobile#DOCOMO) n'est pas valide.
+Problème : Le fichier (UTF-8-Mobile#KDDI-A) n'est pas valide.
+Problème : Le fichier (UTF-8-Mobile#KDDI-B) n'est pas valide.
+Problème : Le fichier (UTF-8-Mobile#SOFTBANK) n'est pas valide.
+Problème : Le fichier (CP932) n'est pas valide.
+Problème : Le fichier (SJIS-win) n'est pas valide.
+Problème : Le fichier (CP51932) n'est pas valide.
+Problème : Le fichier (JIS) n'est pas valide.
+Problème : Le fichier (ISO-2022-JP) n'est pas valide.
+Problème : Le fichier (ISO-2022-JP-MS) n'est pas valide.
+Problème : Le fichier (GB18030) n'est pas valide.
+Problème : Le fichier (Windows-1252) n'est pas valide.
+Problème : Le fichier (Windows-1254) n'est pas valide.
+Problème : Le fichier (ISO-8859-1) n'est pas valide.
+Problème : Le fichier (ISO-8859-2) n'est pas valide.
+Problème : Le fichier (ISO-8859-3) n'est pas valide.
+Problème : Le fichier (ISO-8859-4) n'est pas valide.
+Problème : Le fichier (ISO-8859-5) n'est pas valide.
+Problème : Le fichier (ISO-8859-6) n'est pas valide.
+Problème : Le fichier (ISO-8859-7) n'est pas valide.
+Problème : Le fichier (ISO-8859-8) n'est pas valide.
+Problème : Le fichier (ISO-8859-9) n'est pas valide.
+Problème : Le fichier (ISO-8859-10) n'est pas valide.
+Problème : Le fichier (ISO-8859-13) n'est pas valide.
+Problème : Le fichier (ISO-8859-14) n'est pas valide.
+Problème : Le fichier (ISO-8859-15) n'est pas valide.
+Problème : Le fichier (ISO-8859-16) n'est pas valide.
+Problème : Le fichier (EUC-CN) n'est pas valide.
+Problème : Le fichier (CP936) n'est pas valide.
+Problème : Le fichier (HZ) n'est pas valide.
+Problème : Le fichier (EUC-TW) n'est pas valide.
+Problème : Le fichier (BIG-5) n'est pas valide.
+Problème : Le fichier (CP950) n'est pas valide.
+Problème : Le fichier (EUC-KR) n'est pas valide.
+Problème : Le fichier (UHC) n'est pas valide.
+Problème : Le fichier (ISO-2022-KR) n'est pas valide.
+Problème : Le fichier (Windows-1251) n'est pas valide.
+Problème : Le fichier (CP866) n'est pas valide.
+Problème : Le fichier (KOI8-R) n'est pas valide.
+Problème : Le fichier (KOI8-U) n'est pas valide.
+Problème : Le fichier (ArmSCII-8) n'est pas valide.
+Problème : Le fichier (CP850) n'est pas valide.
+Problème : Le fichier (ISO-2022-JP-2004) n'est pas valide.
+Problème : Le fichier (ISO-2022-JP-MOBILE#KDDI) n'est pas valide.
+Problème : Le fichier (CP50220) n'est pas valide.
+Problème : Le fichier (CP50221) n'est pas valide.
+Problème : Le fichier (CP50222) n'est pas valide.
+------------------------------
+
+-- ERROR : send
+------------------------------
+Problème : L'adresse email du destinataire () n'est pas valide.

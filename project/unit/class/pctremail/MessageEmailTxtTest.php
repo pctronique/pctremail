@@ -19,8 +19,11 @@ class MessageEmailTest extends TestCase
     protected MessageEmail|null $object;
     private string|null $folderSave;
     private string|null $fileValide;
-    private string|null $FileError;
-    private string|null $FileVerif;
+    private string|null $fileError;
+    private string|null $fileVerif;
+    private string|null $nameFileValide;
+    private string|null $namefileError;
+    private string|null $namefileVerif;
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -33,9 +36,12 @@ class MessageEmailTest extends TestCase
         if (!is_dir($this->folderSave)) {
             mkdir($this->folderSave, 0777, true);
         }
-        $this->fileValide = $this->folderSave . "EmailMsgValide.txt";
-        $this->FileError = $this->folderSave . "EmailMsgError.txt";
-        $this->FileVerif = $this->folderSave . "EmailMsgVerif.txt";
+        $this->nameFileValide = "EmailMsgValide.txt";
+        $this->namefileError = "EmailMsgError.txt";
+        $this->namefileVerif = "EmailMsgVerif.txt";
+        $this->fileValide = $this->folderSave.$this->nameFileValide;
+        $this->fileError = $this->folderSave.$this->namefileError;
+        $this->fileVerif = $this->folderSave.$this->namefileVerif;
     }
 
     private function deleteFile(): self
@@ -43,11 +49,11 @@ class MessageEmailTest extends TestCase
         if (is_file($this->fileValide)) {
             unlink($this->fileValide);
         }
-        if (is_file($this->FileError)) {
-            unlink($this->FileError);
+        if (is_file($this->fileError)) {
+            unlink($this->fileError);
         }
-        if (is_file($this->FileVerif)) {
-            unlink($this->FileVerif);
+        if (is_file($this->fileVerif)) {
+            unlink($this->fileVerif);
         }
         return $this;
     }
@@ -65,7 +71,7 @@ class MessageEmailTest extends TestCase
         }
         file_put_contents($this->fileValide, $content, FILE_APPEND);
         if ($verif) {
-            file_put_contents($this->FileVerif, $content, FILE_APPEND);
+            file_put_contents($this->fileVerif, $content, FILE_APPEND);
         }
         return $this;
     }
@@ -81,9 +87,9 @@ class MessageEmailTest extends TestCase
             //echo $value."\n";
             $content .= (!empty($value) ? $value : (isset($value) ? $value : "NULL")) . "\n";
         }
-        file_put_contents($this->FileError, $content, FILE_APPEND);
+        file_put_contents($this->fileError, $content, FILE_APPEND);
         if ($verif) {
-            file_put_contents($this->FileVerif, $content, FILE_APPEND);
+            file_put_contents($this->fileVerif, $content, FILE_APPEND);
         }
         return $this;
     }
@@ -222,6 +228,20 @@ class MessageEmailTest extends TestCase
         $testFunction = $this->object->getKeys();
         $this->assertNotNull($testFunction);
         $this->assertIsArray($testFunction);
+        return $this;
+    }
+        
+    public function testFinal():self {
+        $folderTest = __DIR__."/../../validtest/";
+        $txtFileValide = file_get_contents($this->folderSave.$this->nameFileValide);
+        $txtFileError = file_get_contents($this->folderSave.$this->nameFileError);
+        $txtFileVerif = file_get_contents($this->folderSave.$this->nameFileVerif);
+        $txtTstFileValide = file_get_contents($folderTest.$this->nameFileValide);
+        $txtTstFileError = file_get_contents($folderTest.$this->nameFileError);
+        $txtTstFileVerif = file_get_contents($folderTest.$this->nameFileVerif);
+        $this->assertEquals($txtFileValide, $txtTstFileValide);
+        $this->assertEquals($txtFileError, $txtTstFileError);
+        $this->assertEquals($txtFileVerif, $txtTstFileVerif);
         return $this;
     }
 
