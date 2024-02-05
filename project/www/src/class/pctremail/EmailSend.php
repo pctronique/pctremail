@@ -2,7 +2,7 @@
 // verifier qu'on n'a pas deja creer la classe
 if (!class_exists('EmailSend')) {
 
-    require __DIR__ ."/MessageEmail.php";
+    require_once __DIR__ ."/MessageEmail.php";
 
     /**
      * Pour envoyer des e-mail.

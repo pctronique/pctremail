@@ -18,8 +18,11 @@ class EmailSendTest extends TestCase
     protected EmailSend|null $object;
     private string|null $folderSave;
     private string|null $fileValide;
-    private string|null $FileError;
-    private string|null $FileVerif;
+    private string|null $fileError;
+    private string|null $fileVerif;
+    private string|null $nameFileValide;
+    private string|null $nameFileError;
+    private string|null $nameFileVerif;
 
     /**
      * Sets up the fixture, for example, opens a network connection.
@@ -31,20 +34,23 @@ class EmailSendTest extends TestCase
         if(!is_dir($this->folderSave)) {
             mkdir($this->folderSave, 0777, true);
         }
-        $this->fileValide = $this->folderSave."EmailSendValide.txt";
-        $this->FileError = $this->folderSave."EmailSendError.txt";
-        $this->FileVerif = $this->folderSave."EmailSendVerif.txt";
+        $this->nameFileValide = "EmailSendValide.txt";
+        $this->nameFileError = "EmailSendError.txt";
+        $this->nameFileVerif = "EmailSendVerif.txt";
+        $this->fileValide = $this->folderSave.$this->nameFileValide;
+        $this->fileError = $this->folderSave.$this->nameFileError;
+        $this->fileVerif = $this->folderSave.$this->nameFileVerif;
     }
 
     private function deleteFile():self {
         if(is_file($this->fileValide)) {
             unlink($this->fileValide);
         }
-        if(is_file($this->FileError)) {
-            unlink($this->FileError);
+        if(is_file($this->fileError)) {
+            unlink($this->fileError);
         }
-        if(is_file($this->FileVerif)) {
-            unlink($this->FileVerif);
+        if(is_file($this->fileVerif)) {
+            unlink($this->fileVerif);
         }
         return $this;
     }
@@ -61,7 +67,7 @@ class EmailSendTest extends TestCase
         }
         file_put_contents($this->fileValide,$content,FILE_APPEND);
         if($verif) {
-            file_put_contents($this->FileVerif,$content,FILE_APPEND);
+            file_put_contents($this->fileVerif,$content,FILE_APPEND);
         }
         return $this;
     }
@@ -76,9 +82,9 @@ class EmailSendTest extends TestCase
             //echo $value."\n";
             $content .= (!empty($value) ? $value : (isset($value) ? $value : "NULL"))."\n";
         }
-        file_put_contents($this->FileError,$content,FILE_APPEND);
+        file_put_contents($this->fileError,$content,FILE_APPEND);
         if($verif) {
-            file_put_contents($this->FileVerif,$content,FILE_APPEND);
+            file_put_contents($this->fileVerif,$content,FILE_APPEND);
         }
         return $this;
     }
@@ -249,11 +255,7 @@ class EmailSendTest extends TestCase
             $this->assertNotNull($this->object);
             return $this;
         }
-
-        /**
-         * Pour envoyer un message html (si le message ne peut pas etre lut en html, il sera affiche en texte).
-         * Si le message texte est vide, il sera remplacer par le htlm (sans les balises).
-         */
+        
         public function testSend():self {
             $tabError = [];
             $tabVal = [];
@@ -277,6 +279,20 @@ class EmailSendTest extends TestCase
             $this->displayValidated($tabVal, "send");
             $this->displayError($tabError, "send", true);
             $this->assertNotNull($this->object);
+            return $this;
+        }
+        
+        public function testFinal():self {
+            $folderTest = __DIR__."/../../validtest/";
+            $txtFileValide = file_get_contents($this->folderSave.$this->nameFileValide);
+            $txtFileError = file_get_contents($this->folderSave.$this->nameFileError);
+            $txtFileVerif = file_get_contents($this->folderSave.$this->nameFileVerif);
+            $txtTstFileValide = file_get_contents($folderTest.$this->nameFileValide);
+            $txtTstFileError = file_get_contents($folderTest.$this->nameFileError);
+            $txtTstFileVerif = file_get_contents($folderTest.$this->nameFileVerif);
+            $this->assertEquals($txtFileValide, $txtTstFileValide);
+            $this->assertEquals($txtFileError, $txtTstFileError);
+            $this->assertEquals($txtFileVerif, $txtTstFileVerif);
             return $this;
         }
         
