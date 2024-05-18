@@ -1,0 +1,11 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/${home}/public_html/
+    - export DEPLOYCRONPATH=/${home}/cron_html/
+    - export DEPLOYERRPATH=/${home}/public_html/error/
+    - export DEPLOYINSTPATH=/${home}/public_html/install/
+    - /bin/cp -R project/www/* $DEPLOYPATH
+    #- /bin/cp -R project/error/* $DEPLOYERRPATH
+    #- /bin/cp -R project/install/* $DEPLOYINSTPATH
+    - /bin/cp -R project/cron/* $DEPLOYCRONPATH
