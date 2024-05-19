@@ -2,7 +2,7 @@
 
 -- ERROR : MessageEmail
 ------------------------------
-Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/favicon.ico).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www//favicon.ico).
 ------------------------------
 
 -- VALIDATED : setFormatVar
@@ -12,5 +12,5 @@ Valeur valide : [%s]
 
 -- ERROR : Message
 ------------------------------
-Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/favicon.ico).
-Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/example/messages.json).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www//favicon.ico).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www//example/messages.json).

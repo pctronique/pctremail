@@ -1,6 +1,8 @@
 <?php
 
-require __DIR__ . "/config_path.php";
+if (!defined('UNIT_RACINE_WWW')) {
+    require __DIR__ . "/config_path.php";
+}
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -29,8 +31,8 @@ function array_cmd()
 
 function array_file()
 {
-    return array(null, RACINE_WWW . "/favicon.ico", RACINE_WWW . "/example/test.html", 
-                    RACINE_WWW . "/example/message.ini", RACINE_WWW . "/example/messages.json");
+    return array(null, UNIT_RACINE_WWW . "/favicon.ico", UNIT_RACINE_WWW . "/example/test.html", 
+                    UNIT_RACINE_WWW . "/example/message.ini", UNIT_RACINE_WWW . "/example/messages.json");
 }
 
 function array_folder()

@@ -2,7 +2,7 @@
 
 -- ERROR : MessageEmail
 ------------------------------
-Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/favicon.ico).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www//favicon.ico).
 ------------------------------
 
 -- ERROR : setFormatVar
@@ -44,10 +44,10 @@ Problème : Le contenu de la sélection de variable n'est pas valide, il manque 
 Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (/usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/)
 Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (/usr/local/projecttmp/tmp/php/test1/../../..)
 Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (linux)
-Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (/usr/local/apache2/unit/../www/favicon.ico)
-Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (/usr/local/apache2/unit/../www/example/test.html)
-Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (/usr/local/apache2/unit/../www/example/message.ini)
-Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (/usr/local/apache2/unit/../www/example/messages.json)
+Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (/usr/local/apache2/unit/../www//favicon.ico)
+Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (/usr/local/apache2/unit/../www//example/test.html)
+Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (/usr/local/apache2/unit/../www//example/message.ini)
+Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (/usr/local/apache2/unit/../www//example/messages.json)
 Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (test@test.fr)
 Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (test1@test.fr)
 Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (BASE64)
@@ -132,5 +132,5 @@ Problème : Le contenu de la sélection de variable n'est pas valide, il manque 
 
 -- ERROR : Message
 ------------------------------
-Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/favicon.ico).
-Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/example/messages.json).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www//favicon.ico).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www//example/messages.json).

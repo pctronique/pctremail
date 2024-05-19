@@ -40,10 +40,10 @@ Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1/../../../) n'es
 Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/) n'est pas valide.
 Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1/../../..) n'est pas valide.
 Problème : L'adresse email (linux) n'est pas valide.
-Problème : L'adresse email (/usr/local/apache2/unit/../www/favicon.ico) n'est pas valide.
-Problème : L'adresse email (/usr/local/apache2/unit/../www/example/test.html) n'est pas valide.
-Problème : L'adresse email (/usr/local/apache2/unit/../www/example/message.ini) n'est pas valide.
-Problème : L'adresse email (/usr/local/apache2/unit/../www/example/messages.json) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www//favicon.ico) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www//example/test.html) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www//example/message.ini) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www//example/messages.json) n'est pas valide.
 Problème : L'adresse email (BASE64) n'est pas valide.
 Problème : L'adresse email (UUENCODE) n'est pas valide.
 Problème : L'adresse email (HTML-ENTITIES) n'est pas valide.
@@ -164,10 +164,10 @@ Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1/../../../) n'es
 Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/) n'est pas valide.
 Problème : L'adresse email (/usr/local/projecttmp/tmp/php/test1/../../..) n'est pas valide.
 Problème : L'adresse email (linux) n'est pas valide.
-Problème : L'adresse email (/usr/local/apache2/unit/../www/favicon.ico) n'est pas valide.
-Problème : L'adresse email (/usr/local/apache2/unit/../www/example/test.html) n'est pas valide.
-Problème : L'adresse email (/usr/local/apache2/unit/../www/example/message.ini) n'est pas valide.
-Problème : L'adresse email (/usr/local/apache2/unit/../www/example/messages.json) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www//favicon.ico) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www//example/test.html) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www//example/message.ini) n'est pas valide.
+Problème : L'adresse email (/usr/local/apache2/unit/../www//example/messages.json) n'est pas valide.
 Problème : L'adresse email (BASE64) n'est pas valide.
 Problème : L'adresse email (UUENCODE) n'est pas valide.
 Problème : L'adresse email (HTML-ENTITIES) n'est pas valide.
@@ -286,10 +286,10 @@ Problème : Le charset (/usr/local/projecttmp/tmp/php/test1/../../../) n'est pas
 Problème : Le charset (/usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/) n'est pas valide.
 Problème : Le charset (/usr/local/projecttmp/tmp/php/test1/../../..) n'est pas valide.
 Problème : Le charset (linux) n'est pas valide.
-Problème : Le charset (/usr/local/apache2/unit/../www/favicon.ico) n'est pas valide.
-Problème : Le charset (/usr/local/apache2/unit/../www/example/test.html) n'est pas valide.
-Problème : Le charset (/usr/local/apache2/unit/../www/example/message.ini) n'est pas valide.
-Problème : Le charset (/usr/local/apache2/unit/../www/example/messages.json) n'est pas valide.
+Problème : Le charset (/usr/local/apache2/unit/../www//favicon.ico) n'est pas valide.
+Problème : Le charset (/usr/local/apache2/unit/../www//example/test.html) n'est pas valide.
+Problème : Le charset (/usr/local/apache2/unit/../www//example/message.ini) n'est pas valide.
+Problème : Le charset (/usr/local/apache2/unit/../www//example/messages.json) n'est pas valide.
 Problème : Le charset (test@test.fr) n'est pas valide.
 Problème : Le charset (test1@test.fr) n'est pas valide.
 ------------------------------
@@ -301,21 +301,19 @@ Problème : Le charset (test1@test.fr) n'est pas valide.
 -- ERROR : setMessageHTML
 ------------------------------
 Problème : Le fichier n'est pas valide(////).
-Problème : Le fichier n'est pas valide(/usr/local/projecttmp/tmp/php).
 Problème : Le fichier n'est pas valide(/).
 Problème : Le fichier n'est pas valide(/usr/local/src/).
-Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/favicon.ico).
-Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/example/messages.json).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www//favicon.ico).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www//example/messages.json).
 ------------------------------
 
 -- ERROR : setMessageText
 ------------------------------
 Problème : Le fichier n'est pas valide(////).
-Problème : Le fichier n'est pas valide(/usr/local/projecttmp/tmp/php).
 Problème : Le fichier n'est pas valide(/).
 Problème : Le fichier n'est pas valide(/usr/local/src/).
-Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/favicon.ico).
-Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www/example/messages.json).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www//favicon.ico).
+Problème : Le fichier n'est pas valide(/usr/local/apache2/unit/../www//example/messages.json).
 ------------------------------
 
 -- ERROR : addAttachment
@@ -356,8 +354,8 @@ Problème : Le fichier (/usr/local/projecttmp/tmp/php/test1/../../../) n'est pas
 Problème : Le fichier (/usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/) n'est pas valide.
 Problème : Le fichier (/usr/local/projecttmp/tmp/php/test1/../../..) n'est pas valide.
 Problème : Le fichier (linux) n'est pas valide.
-Problème : Le fichier (/usr/local/apache2/unit/../www/example/test.html) n'est pas valide.
-Problème : Le fichier (/usr/local/apache2/unit/../www/example/message.ini) n'est pas valide.
+Problème : Le fichier (/usr/local/apache2/unit/../www//example/test.html) n'est pas valide.
+Problème : Le fichier (/usr/local/apache2/unit/../www//example/message.ini) n'est pas valide.
 Problème : Le fichier (test@test.fr) n'est pas valide.
 Problème : Le fichier (test1@test.fr) n'est pas valide.
 Problème : Le fichier (BASE64) n'est pas valide.
