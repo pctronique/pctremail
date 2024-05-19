@@ -1,1 +1,1 @@
-<?php define("RACINE_WWW", __DIR__."/../www/"); ?>
+<?php define("UNIT_RACINE_WWW", __DIR__."/../www/"); ?>

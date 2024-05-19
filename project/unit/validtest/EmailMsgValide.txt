@@ -40,9 +40,9 @@ Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../
 Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/
 Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../..
 Valeur valide : linux
-Valeur valide : /usr/local/apache2/unit/../www/example/test.html
-Valeur valide : /usr/local/apache2/unit/../www/example/message.ini
-Valeur valide : /usr/local/apache2/unit/../www/example/messages.json
+Valeur valide : /usr/local/apache2/unit/../www//example/test.html
+Valeur valide : /usr/local/apache2/unit/../www//example/message.ini
+Valeur valide : /usr/local/apache2/unit/../www//example/messages.json
 Valeur valide : test@test.fr
 Valeur valide : test1@test.fr
 Valeur valide : BASE64
@@ -170,8 +170,8 @@ Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../
 Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/
 Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../..
 Valeur valide : linux
-Valeur valide : /usr/local/apache2/unit/../www/example/test.html
-Valeur valide : /usr/local/apache2/unit/../www/example/message.ini
+Valeur valide : /usr/local/apache2/unit/../www//example/test.html
+Valeur valide : /usr/local/apache2/unit/../www//example/message.ini
 Valeur valide : test@test.fr
 Valeur valide : test1@test.fr
 Valeur valide : BASE64

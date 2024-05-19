@@ -136,10 +136,10 @@ Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../
 Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/
 Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../..
 Valeur valide : linux
-Valeur valide : /usr/local/apache2/unit/../www/favicon.ico
-Valeur valide : /usr/local/apache2/unit/../www/example/test.html
-Valeur valide : /usr/local/apache2/unit/../www/example/message.ini
-Valeur valide : /usr/local/apache2/unit/../www/example/messages.json
+Valeur valide : /usr/local/apache2/unit/../www//favicon.ico
+Valeur valide : /usr/local/apache2/unit/../www//example/test.html
+Valeur valide : /usr/local/apache2/unit/../www//example/message.ini
+Valeur valide : /usr/local/apache2/unit/../www//example/messages.json
 Valeur valide : test@test.fr
 Valeur valide : test1@test.fr
 Valeur valide : BASE64
@@ -236,6 +236,7 @@ Valeur valide : A15F
 Valeur valide : 0
 Valeur valide : 1
 Valeur valide : 2
+Valeur valide : /usr/local/projecttmp/tmp/php
 Valeur valide : /opt/tmp
 Valeur valide : message_1
 Valeur valide : [%s]
@@ -258,8 +259,8 @@ Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../
 Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/
 Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../..
 Valeur valide : linux
-Valeur valide : /usr/local/apache2/unit/../www/example/test.html
-Valeur valide : /usr/local/apache2/unit/../www/example/message.ini
+Valeur valide : /usr/local/apache2/unit/../www//example/test.html
+Valeur valide : /usr/local/apache2/unit/../www//example/message.ini
 Valeur valide : test@test.fr
 Valeur valide : test1@test.fr
 Valeur valide : BASE64
@@ -356,6 +357,7 @@ Valeur valide : A15F
 Valeur valide : 0
 Valeur valide : 1
 Valeur valide : 2
+Valeur valide : /usr/local/projecttmp/tmp/php
 Valeur valide : /opt/tmp
 Valeur valide : message_1
 Valeur valide : [%s]
@@ -378,8 +380,8 @@ Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../
 Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../../tmp//kml/
 Valeur valide : /usr/local/projecttmp/tmp/php/test1/../../..
 Valeur valide : linux
-Valeur valide : /usr/local/apache2/unit/../www/example/test.html
-Valeur valide : /usr/local/apache2/unit/../www/example/message.ini
+Valeur valide : /usr/local/apache2/unit/../www//example/test.html
+Valeur valide : /usr/local/apache2/unit/../www//example/message.ini
 Valeur valide : test@test.fr
 Valeur valide : test1@test.fr
 Valeur valide : BASE64
@@ -466,8 +468,8 @@ Valeur valide : CP50222
 ------------------------------
 Valeur valide : 
 Valeur valide : 0
-Valeur valide : /usr/local/apache2/unit/../www/favicon.ico
-Valeur valide : /usr/local/apache2/unit/../www/example/messages.json
+Valeur valide : /usr/local/apache2/unit/../www//favicon.ico
+Valeur valide : /usr/local/apache2/unit/../www//example/messages.json
 ------------------------------
 
 -- VALIDATED : send
