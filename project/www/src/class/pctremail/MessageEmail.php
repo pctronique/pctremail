@@ -74,7 +74,6 @@ if (!class_exists('MessageEmail')) {
                     }
                 }else {
                     throw new Error("Le fichier n'est pas valide(".(!empty($file_message) ? $file_message : (isset($file_message) ? $file_message : "NULL")).").", 36245000006);
-                    return "";
                 }
             }
         }
@@ -91,7 +90,6 @@ if (!class_exists('MessageEmail')) {
         {
             if (!str_contains($selectVar, '%s')) {
                 throw new Error("Le contenu de la sélection de variable n'est pas valide, il manque %s (".$selectVar.")", 63736000003);
-                return $this;
             }
             if(!empty($selectVar)) {
                 $this->selectVar = $selectVar;
@@ -210,7 +208,6 @@ if (!class_exists('MessageEmail')) {
                     }
                 }else {
                     throw new Error("Le fichier n'est pas valide(".(!empty($message) ? $message : (isset($message) ? $message : "NULL")).").", 63736000005);
-                    return "";
                 }
             }
             // afficher le texte sans les variables

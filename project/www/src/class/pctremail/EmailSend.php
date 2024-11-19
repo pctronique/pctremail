@@ -169,11 +169,9 @@ if (!class_exists('EmailSend')) {
                         return !empty($content) ? $content : "";
                     } else {
                         throw new Error("Il n'est pas possible d'ouvrir le fichier (".(!empty($message) ? $message : (isset($message) ? $message : "NULL")).").", 36245000007);
-                        return "";
                     }
                 }else {
                     throw new Error("Le fichier n'est pas valide(".(!empty($message) ? $message : (isset($message) ? $message : "NULL")).").", 36245000008);
-                    return "";
                 }
             } else {
                 return !empty($message) ? $message : "";
