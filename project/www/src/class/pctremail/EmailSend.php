@@ -8,7 +8,7 @@ if (!class_exists('EmailSend')) {
      * Pour envoyer des e-mail.
      * (Numéro d'error de la classe '36245XXXXXX')
      * 
-     * @version 1.1.1.0
+     * @version 1.1.0
      * @author NAULOT ludovic
      */
     class EmailSend {
