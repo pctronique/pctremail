@@ -6,7 +6,7 @@ if (!class_exists('MessageEmail')) {
      * Récupération d'un message et le modifier avant de l'envoyer par e-mail.
      * (Numéro d'error de la classe '63736XXXXXX')
      * 
-     * @version 1.1.1.0
+     * @version 1.1.0
      * @author NAULOT ludovic
      */
     class MessageEmail {
