@@ -58,6 +58,7 @@ Valeur valide : JIS
 Valeur valide : ISO-2022-JP
 Valeur valide : ISO-2022-JP-MS
 Valeur valide : GB18030
+Valeur valide : GB18030-2022
 Valeur valide : Windows-1252
 Valeur valide : Windows-1254
 Valeur valide : ISO-8859-1
