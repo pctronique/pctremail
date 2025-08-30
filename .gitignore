@@ -23,6 +23,7 @@
 /project/www/upload
 /project/www/config/config.php
 /project/www/config/sgbd_config.php
+/project/www/src/config/config.ini
 /project/www/src/config/config.php
 /project/www/src/config/sgbd_config.php
 /project/cron/config_path.php
