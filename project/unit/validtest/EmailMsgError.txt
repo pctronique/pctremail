@@ -92,6 +92,7 @@ Problème : Le contenu de la sélection de variable n'est pas valide, il manque 
 Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (ISO-2022-JP)
 Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (ISO-2022-JP-MS)
 Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (GB18030)
+Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (GB18030-2022)
 Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (Windows-1252)
 Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (Windows-1254)
 Problème : Le contenu de la sélection de variable n'est pas valide, il manque %s (ISO-8859-1)

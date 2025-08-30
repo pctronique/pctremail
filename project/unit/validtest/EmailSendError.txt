@@ -86,6 +86,7 @@ Problème : L'adresse email (JIS) n'est pas valide.
 Problème : L'adresse email (ISO-2022-JP) n'est pas valide.
 Problème : L'adresse email (ISO-2022-JP-MS) n'est pas valide.
 Problème : L'adresse email (GB18030) n'est pas valide.
+Problème : L'adresse email (GB18030-2022) n'est pas valide.
 Problème : L'adresse email (Windows-1252) n'est pas valide.
 Problème : L'adresse email (Windows-1254) n'est pas valide.
 Problème : L'adresse email (ISO-8859-1) n'est pas valide.
@@ -210,6 +211,7 @@ Problème : L'adresse email (JIS) n'est pas valide.
 Problème : L'adresse email (ISO-2022-JP) n'est pas valide.
 Problème : L'adresse email (ISO-2022-JP-MS) n'est pas valide.
 Problème : L'adresse email (GB18030) n'est pas valide.
+Problème : L'adresse email (GB18030-2022) n'est pas valide.
 Problème : L'adresse email (Windows-1252) n'est pas valide.
 Problème : L'adresse email (Windows-1254) n'est pas valide.
 Problème : L'adresse email (ISO-8859-1) n'est pas valide.
@@ -400,6 +402,7 @@ Problème : Le fichier (JIS) n'est pas valide.
 Problème : Le fichier (ISO-2022-JP) n'est pas valide.
 Problème : Le fichier (ISO-2022-JP-MS) n'est pas valide.
 Problème : Le fichier (GB18030) n'est pas valide.
+Problème : Le fichier (GB18030-2022) n'est pas valide.
 Problème : Le fichier (Windows-1252) n'est pas valide.
 Problème : Le fichier (Windows-1254) n'est pas valide.
 Problème : Le fichier (ISO-8859-1) n'est pas valide.
